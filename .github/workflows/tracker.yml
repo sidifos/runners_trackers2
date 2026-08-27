@@ -1,0 +1,67 @@
+name: Solana Runner Tracker
+
+on:
+  schedule:
+    # UTC times. Summer (Paris = UTC+2): 06:00 → 08:00 CET, 20:00 → 22:00 CET.
+    # Winter (Paris = UTC+1), shift by one hour: use 07:00 and 21:00.
+    - cron: "0 6 * * *"
+    - cron: "0 20 * * *"
+  workflow_dispatch:        # "Run workflow" button for on-demand runs
+
+permissions:
+  contents: write           # needed to write back the calibration history
+  pages: write
+  id-token: write
+
+concurrency:
+  group: tracker
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Pick the run type
+        id: kind
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 20 * * *" ]; then
+            echo "run=evening" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=morning" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run the tracker
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: python src/main.py --run ${{ steps.kind.outputs.run }}
+
+      - name: Archive the report
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ steps.kind.outputs.run }}
+          path: out/
+          retention-days: 30
+
+      - name: Persist history and calibration
+        run: |
+          git config user.name  "tracker-bot"
+          git config user.email "tracker-bot@users.noreply.github.com"
+          git add -A data out
+          git diff --staged --quiet || git commit -m "run ${{ steps.kind.outputs.run }} $(date -u +%F_%H:%M)"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+      - uses: actions/deploy-pages@v4
