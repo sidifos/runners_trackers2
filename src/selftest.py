@@ -268,8 +268,64 @@ def main() -> int:
           not any(any(w in x["label"].lower() for w in ("side", "alt", " dev", "bundle"))
                   for x in main_list))
 
-    print("\n11. Insider gates (the $PENSION case)")
+    print("\n11. Holder parsing (the 538% top 10)")
     import insiders
+
+    POOL = "PooLvau1t1111111111111111111111111111111111"
+
+    def report(holders, **extra):
+        payload = {
+            "totalHolders": 2100,
+            "topHolders": [{"owner": o, "address": o, "pct": p} for o, p in holders],
+            "markets": [{"pubkey": "mkt", "liquidityA": POOL,
+                         "lp": {"lpLockedPct": 100}}],
+        }
+        payload.update(extra)
+        return payload
+
+    # A perfectly ordinary cap table: a pool, two real whales, a long tail of
+    # holders below 1%. That tail is what the old per-value rescale destroyed.
+    ordinary = [(POOL, 62.0), ("w1", 3.1), ("w2", 2.4), ("h3", 0.9), ("h4", 0.8),
+                ("h5", 0.7), ("h6", 0.6), ("h7", 0.55), ("h8", 0.5),
+                ("h9", 0.45), ("h10", 0.4), ("h11", 0.3)]
+    prof = insiders.parse_report(report(ordinary))
+    check("sub-1% holders are not inflated 100x",
+          9.0 < prof.top10_pct < 11.0, f"top10 = {prof.top10_pct:.1f}%")
+    check("the AMM pool is not counted as concentration",
+          prof.top1_pct < 5, f"top1 = {prof.top1_pct:.1f}%")
+    check("an ordinary cap table stays readable", prof.reliable)
+    check("holder count is a count, not a percentage",
+          insiders.parse_report(report(ordinary, totalHolders=1)).holder_count == 1)
+
+    # The same distribution encoded as fractions has to land in the same place.
+    frac = [{"owner": o, "address": o, "pct": p / 100} for o, p in ordinary]
+    prof_f = insiders.parse_report({"totalHolders": 2100, "topHolders": frac,
+                                    "markets": [{"liquidityA": POOL}]})
+    check("fraction-encoded reports land on the same numbers",
+          abs(prof_f.top10_pct - prof.top10_pct) < 0.2,
+          f"{prof_f.top10_pct:.1f}% vs {prof.top10_pct:.1f}%")
+
+    # And an unreadable report must never present itself as a verdict.
+    broken = insiders.parse_report(report([(f"x{i}", 15.0) for i in range(12)]))
+    check("a >100% reading marks the profile unreliable", not broken.reliable,
+          f"top10 = {broken.top10_pct:.1f}%")
+    check("no share is ever published above 100%", broken.top10_pct <= 100.0)
+    probe0 = filters.Token(mint="b", symbol="B", name="B")
+    check("unreadable holder data does not cut the token",
+          insiders.apply_gates(probe0, broken, cfg)[0],
+          insiders.apply_gates(probe0, broken, cfg)[1])
+
+    # Real concentration still has to be caught.
+    concentrated = insiders.parse_report(
+        report([(POOL, 20.0), ("whale", 34.0), ("w2", 12.0), ("w3", 9.0),
+                ("w4", 6.0), ("w5", 4.0), ("w6", 3.0)]))
+    check("genuine concentration is still measured",
+          concentrated.reliable and concentrated.top10_pct > 55,
+          f"top10 = {concentrated.top10_pct:.1f}%")
+    check("genuine concentration is still cut",
+          not insiders.apply_gates(probe0, concentrated, cfg)[0])
+
+    print("\n11b. Insider gates (the $PENSION case)")
     probe = filters.Token(mint="m", symbol="PENSION", name="Pension")
     probe.liquidity, probe.vol_h24, probe.mcap = 300_000, 900_000, 5_000_000
     heavy = insiders.HolderProfile(insider_pct=32, top10_pct=45, holder_count=900,
