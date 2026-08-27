@@ -18,6 +18,18 @@ rug_reject: 55                # above this the structural risk is too high
 unknown_rug_score: 35         # penalty when RugCheck does not answer
 rugcheck_score_alarm: 60
 
+# --- Holder structure and insiders ----------------------------------------
+# The $PENSION case: 32% insider supply with zero tracked-wallet confirmation.
+# Heavy concentration alone is not proof of fraud, but it removes the benefit
+# of the doubt — so above insider_needs_kol_pct a token has to be confirmed by
+# wallets you actually follow before it can be published.
+insider_reject_pct: 30        # insider-held supply that disqualifies outright
+insider_needs_kol_pct: 15     # above this, tracked-wallet confirmation required
+insider_kol_required: 2       # how many tracked wallets that confirmation needs
+top10_reject_pct: 55          # top 10 holders combined
+top1_reject_pct: 25           # any single non-pool holder
+min_holders: 150              # a real move has a real holder base
+
 # --- Wash-trading detection ------------------------------------------------
 vol_liq_high: 25              # volume/liquidity ratio worth questioning
 vol_liq_extreme: 70           # ratio that is almost always manufactured
@@ -29,11 +41,24 @@ size_uniform: 0.05            # identical trade size at 1h and 24h
 liq_mcap_thin: 0.02           # starved liquidity against market cap
 
 # --- Tracked wallet confluence ---------------------------------------------
-require_kol: false            # set true once your wallet list is loaded and trusted
+require_kol: false            # set true once the wallet list is proven out
 min_kol_buyers: 2             # tracked wallets required when require_kol is on
 kol_window_hours: 24
 kol_saturation: 12            # wallet count at which the bonus plateaus
 kol_max_multiplier: 1.8       # maximum multiplier applied to the score
+
+# --- Causal research -------------------------------------------------------
+research_enabled: true        # pump.fun metadata, creator history, attention
+research_top_n: 14            # how many runners get the deep evidence pass
+llm_synthesis: true           # uses ANTHROPIC_API_KEY when present, rules if not
+
+# --- Learning loop ---------------------------------------------------------
+# Every session re-prices past calls: market cap up = good data, down = bad
+# data plus a diagnosis. Patterns only become lessons once enough calls back
+# them up. Threshold changes are suggested, and only applied automatically if
+# you turn auto_apply_lessons on.
+auto_apply_lessons: false
+lesson_min_support: 6
 
 # --- Output ----------------------------------------------------------------
 top_n: 12                     # runners published in the report

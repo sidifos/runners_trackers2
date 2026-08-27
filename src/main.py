@@ -2,6 +2,9 @@
 
     python src/main.py --run morning
     python src/main.py --run evening --top 15
+
+Order matters. The post-mortem runs first so that what the market taught us
+since the last session is already in hand before anything new is judged.
 """
 from __future__ import annotations
 
@@ -19,11 +22,16 @@ sys.path.insert(0, str(Path(__file__).parent))
 import yaml  # noqa: E402
 
 import filters  # noqa: E402
+import insiders  # noqa: E402
 import kol  # noqa: E402
+import kol_scoring  # noqa: E402
 import learn  # noqa: E402
 import narrative  # noqa: E402
+import postmortem  # noqa: E402
+import research  # noqa: E402
 import scoring  # noqa: E402
 import sources  # noqa: E402
+import synthesis  # noqa: E402
 from report import render  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,7 +41,7 @@ OUT = ROOT / "out"
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s  %(name)-9s %(message)s",
+    format="%(asctime)s  %(name)-11s %(message)s",
     datefmt="%H:%M:%S",
 )
 log = logging.getLogger("main")
@@ -53,7 +61,6 @@ def gather_candidates(cfg: dict) -> tuple[list[str], dict[str, dict]]:
     new_pools = sources.gt_new_pools()
     log.info("  GeckoTerminal: %d trending, %d new pools",
              len(trending), len(new_pools))
-
     mints = sources.gt_pool_mints(trending) + sources.gt_pool_mints(new_pools)
 
     boosts = sources.ds_boosted_tokens()
@@ -89,7 +96,6 @@ def enrich(mints: list[str], meta: dict[str, dict],
     for t in tokens:
         t.description = meta.get(t.mint, {}).get("description", "")
 
-    # Cheap pre-filter before calling RugCheck (one request per token).
     pre = [
         t for t in tokens
         if t.liquidity >= cfg["min_liquidity_usd"] * 0.7
@@ -111,6 +117,42 @@ def enrich(mints: list[str], meta: dict[str, dict],
     return plausible
 
 
+def holder_pass(tokens: list, cfg: dict) -> dict:
+    """Full holder profiles for tokens still in contention."""
+    shortlist = [t for t in tokens if t.rug_score < cfg["rug_reject"]
+                 and t.wash_score < cfg["wash_reject"]]
+    log.info("pulling holder structure for %d tokens…", len(shortlist))
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        profiles = list(pool.map(lambda t: insiders.fetch_profile(t.mint), shortlist))
+    out = {}
+    for t, p in zip(shortlist, profiles):
+        out[t.mint] = p
+        t.holders = p.as_dict()
+    flagged = sum(1 for p in profiles if p.insider_pct >= cfg["insider_needs_kol_pct"])
+    log.info("  %d token(s) carry elevated insider supply", flagged)
+    return out
+
+
+def features_of(t, evidence: dict | None) -> dict:
+    """The snapshot the next post-mortem will judge this call against."""
+    ev = evidence or {}
+    att = ev.get("attention", {})
+    return {
+        "mcap": t.mcap, "liquidity": t.liquidity, "vol_h24": t.vol_h24,
+        "chg_h24": t.chg_h24, "age_hours": round(t.age_hours, 1),
+        "vol_liq_ratio": round(t.vol_liq, 1),
+        "wash_score": round(t.wash_score), "rug_score": round(t.rug_score),
+        "kol_buyers": t.kol_buyers, "kol_weight": t.kol_weight,
+        "insider_pct": t.holders.get("insider_pct", 0),
+        "top10_pct": t.holders.get("top10_pct", 0),
+        "holder_count": t.holders.get("holder_count", 0),
+        "has_twitter": att.get("has_twitter", bool(t.socials.get("twitter"))),
+        "paid_boosts": t.boosted,
+        "pump_replies": att.get("pump_replies", 0),
+        "score": t.score,
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", default="morning", choices=["morning", "evening"])
@@ -127,60 +169,119 @@ def main() -> int:
     started = datetime.now(timezone.utc)
     log.info("=== run %s — %s UTC ===", args.run, started.strftime("%Y-%m-%d %H:%M"))
 
-    # 1. Calibrate against previous selections that have matured.
+    # 1. Post-mortem: what happened to the last calls, and what it teaches.
+    pm = {"lessons": [], "patterns": [], "verdicts": []}
+    if not args.no_learn:
+        try:
+            pm = postmortem.run(HISTORY, DATA / "lessons.json", cfg)
+        except Exception as e:  # noqa: BLE001
+            log.warning("post-mortem skipped: %s", e)
+    lessons = pm.get("lessons", [])
+    if lessons:
+        log.info("carrying %d lesson(s) into this run", len(lessons))
+    if cfg.get("auto_apply_lessons"):
+        for key, change in (pm.get("suggested_config") or {}).items():
+            cfg[key] = change["to"]
+            log.info("auto-applied %s: %s → %s", key, change["from"], change["to"])
+
+    # 2. Weight calibration from realised returns.
     state = learn.load_state(DATA / "calibration.json")
     if not args.no_learn:
         try:
-            observations = learn.evaluate_past(HISTORY)
-            state = learn.update(state, observations, DATA / "calibration.json")
-            log.info("active weights: %s", state["weights"])
+            state = learn.update(state, learn.evaluate_past(HISTORY),
+                                 DATA / "calibration.json")
         except Exception as e:  # noqa: BLE001
             log.warning("calibration skipped: %s", e)
 
-    # 2. Today's universe.
+    # 3. Today's universe.
     mints, meta = gather_candidates(cfg)
     if not mints:
         log.error("no candidates retrieved — sources unavailable?")
         return 1
     tokens = enrich(mints, meta, cfg)
 
-    # 3. Tracked-wallet confluence.
+    # 4. Tracked-wallet confluence.
     wallets = kol.load_wallets(ROOT / "config" / "kol_wallets.csv")
+    buy_details: dict = {}
+    ranked_wallets: list[dict] = []
     if wallets and sources.helius_key():
         log.info("analysing %d tracked wallets…", len(wallets))
-        buys = kol.collect_buys(wallets, cfg["kol_window_hours"])
-        kol.apply_to_tokens(tokens, buys)
-        hits = sum(1 for t in tokens if t.kol_buyers)
-        log.info("  %d tokens touched by at least one tracked wallet", hits)
+        buy_details = kol.collect_buys(wallets, cfg["kol_window_hours"])
+        kol.apply_to_tokens(tokens, buy_details)
+        for t in tokens:
+            hit = buy_details.get(t.mint)
+            if hit:
+                t.kol_tiers = hit.get("tiers", [])
+        log.info("  %d tokens touched by at least one tracked wallet",
+                 sum(1 for t in tokens if t.kol_buyers))
+        try:
+            ranked_wallets, _ = kol_scoring.run(
+                wallets, buy_details, tokens, DATA / "kol_scores.json")
+        except Exception as e:  # noqa: BLE001
+            log.warning("wallet scoring skipped: %s", e)
     else:
         log.info("KOL confluence inactive (wallet list or Helius key missing)")
 
-    # 4. Gates and ranking.
+    # 5. Holder structure, then the gates.
+    profiles = holder_pass(tokens, cfg)
+
     kept, rejected = [], []
     for t in tokens:
         ok, why = filters.passes_gates(t, cfg)
+        if ok and t.mint in profiles:
+            ok, why = insiders.apply_gates(t, profiles[t.mint], cfg)
         (kept if ok else rejected).append(t if ok else (t, why))
     log.info("%d kept, %d cut", len(kept), len(rejected))
 
     ranked = scoring.rank(kept, cfg, state.get("weights"))
     runners = ranked[: cfg["top_n"]]
 
-    # 5. Narratives.
+    # 6. Why did each of these run.
+    evidence: dict = {}
+    analyses: dict = {}
+    if cfg.get("research_enabled") and runners:
+        try:
+            metas_now = narrative.fetch_metas()
+            evidence = research.gather(
+                runners[: cfg["research_top_n"]], profiles, buy_details, metas_now)
+            if cfg.get("llm_synthesis"):
+                analyses = synthesis.analyse(evidence, lessons)
+                for t in runners:
+                    t.analysis = analyses.get(t.mint, {})
+        except Exception as e:  # noqa: BLE001
+            log.warning("research pass degraded: %s", e)
+
+    # 7. Narrative layer.
     narr = narrative.build(runners, HISTORY)
-    log.info("narrative: %s", narr["headline"])
+    try:
+        narr["daily"] = synthesis.daily_narrative(
+            evidence, analyses, narr.get("metas", []), lessons)
+        if narr["daily"].get("summary"):
+            narr["headline"] = narr["daily"]["summary"]
+    except Exception as e:  # noqa: BLE001
+        log.warning("daily synthesis skipped: %s", e)
+    log.info("narrative: %s", narr["headline"][:120])
 
-    # 6. Archive for the next run's calibration.
-    learn.record_picks(runners, HISTORY, args.run)
+    # 8. Archive this session's calls with everything needed to judge them later.
+    learn.record_picks(
+        runners, HISTORY, args.run,
+        extra={t.mint: {"features": features_of(t, evidence.get(t.mint)),
+                        "analysis": t.analysis} for t in runners},
+    )
 
-    # 7. Report.
+    # 9. Report.
     payload = {
         "generated_at": started,
         "run": args.run,
         "runners": runners,
         "narrative": narr,
+        "evidence": evidence,
+        "postmortem": pm,
+        "wallet_ranking": ranked_wallets[:25],
         "rejected": [
             {"symbol": t.symbol, "reason": why,
              "wash": round(t.wash_score), "rug": round(t.rug_score),
+             "insiders": t.holders.get("insider_pct", 0),
              "chg": round(t.chg_h24, 1), "vol": t.vol_h24}
             for t, why in sorted(rejected, key=lambda x: -x[0].vol_h24)[:25]
         ],
@@ -191,6 +292,8 @@ def main() -> int:
             "rejected": len(rejected),
             "kol_active": bool(wallets and sources.helius_key()),
             "wallets_tracked": len(wallets),
+            "llm_active": bool(synthesis.api_key() and cfg.get("llm_synthesis")),
+            "researched": len(evidence),
         },
         "calibration": state,
     }
@@ -202,17 +305,25 @@ def main() -> int:
                 "generated_at": started.isoformat(),
                 "run": args.run,
                 "headline": narr["headline"],
+                "daily": narr.get("daily", {}),
                 "runners": [
                     {
                         "rank": i, "symbol": t.symbol, "name": t.name, "mint": t.mint,
                         "score": t.score, "chg_h24": t.chg_h24, "vol_h24": t.vol_h24,
                         "liquidity": t.liquidity, "mcap": t.mcap,
                         "wash_score": t.wash_score, "rug_score": t.rug_score,
-                        "kol_buyers": t.kol_buyers, "url": t.url,
-                        "theme": narrative.classify_theme(t),
+                        "insider_pct": t.holders.get("insider_pct", 0),
+                        "kol_buyers": t.kol_buyers, "kol_names": t.kol_names,
+                        "url": t.url, "why_ran": t.analysis.get("why_ran", ""),
+                        "narrative_tag": t.analysis.get("narrative_tag", ""),
+                        "primary_driver": t.analysis.get("primary_driver", ""),
+                        "confidence": t.analysis.get("confidence"),
+                        "main_risk": t.analysis.get("main_risk", ""),
                     }
                     for i, t in enumerate(runners, 1)
                 ],
+                "lessons": lessons,
+                "scorecard": pm.get("scorecard", {}),
                 "stats": payload["stats"],
             },
             ensure_ascii=False, indent=2,
@@ -223,10 +334,17 @@ def main() -> int:
 
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
-            fh.write(f"### {len(runners)} runners — {narr['headline']}\n\n")
+            fh.write(f"### {len(runners)} runners\n\n{narr['headline']}\n\n")
             for i, t in enumerate(runners[:10], 1):
-                fh.write(f"{i}. **{t.symbol}** — score {t.score} · "
-                         f"{t.chg_h24:+.0f}% · vol ${t.vol_h24:,.0f}\n")
+                tag = t.analysis.get("narrative_tag", "")
+                fh.write(f"{i}. **{t.symbol}** — {t.chg_h24:+.0f}% · "
+                         f"vol ${t.vol_h24:,.0f}"
+                         + (f" · _{tag}_" if tag else "") + "\n")
+            if pm.get("scorecard"):
+                s = pm["scorecard"]
+                fh.write(f"\n**Past calls reviewed:** {s['reviewed']} — "
+                         f"{s['good']} up, {s['bad'] + s['dead']} down "
+                         f"(median {s['median_change']:+.0f}%)\n")
     return 0
 
 

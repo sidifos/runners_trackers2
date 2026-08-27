@@ -45,6 +45,7 @@ def load_wallets(path: str | Path) -> list[dict]:
                     "label": (row.get("label") or row.get("name") or addr[:4]).strip(),
                     "tier": (row.get("tier") or "").strip(),
                     "weight": _weight(row.get("weight"), row.get("tier")),
+                    "twitter": (row.get("twitter") or "").strip(),
                 })
         else:
             for row in reader:  # type: ignore[assignment]
@@ -58,6 +59,7 @@ def load_wallets(path: str | Path) -> list[dict]:
                     "label": (row[1].strip() if len(row) > 1 else addr[:4]),
                     "tier": "",
                     "weight": 1.0,
+                    "twitter": "",
                 })
 
     seen: set[str] = set()
@@ -97,13 +99,16 @@ def collect_buys(wallets: list[dict], window_hours: int,
 
     cutoff = time.time() - window_hours * 3600
     agg: dict[str, dict] = defaultdict(
-        lambda: {"buyers": 0, "weight": 0.0, "labels": []}
+        lambda: {"buyers": 0, "weight": 0.0, "labels": [],
+                 "timestamps": [], "tiers": []}
     )
 
-    def work(w: dict) -> tuple[dict, set[str]]:
-        mints: set[str] = set()
+    def work(w: dict) -> tuple[dict, dict[str, int]]:
+        """Returns the earliest timestamp at which this wallet acquired each mint."""
+        mints: dict[str, int] = {}
         for tx in helius_wallet_swaps(w["address"]):
-            if tx.get("timestamp", 0) < cutoff:
+            ts = tx.get("timestamp", 0)
+            if ts < cutoff:
                 continue
             for tr in tx.get("tokenTransfers") or []:
                 if tr.get("toUserAccount") != w["address"]:
@@ -116,7 +121,8 @@ def collect_buys(wallets: list[dict], window_hours: int,
                         continue
                 except (TypeError, ValueError):
                     continue
-                mints.add(mint)
+                if mint not in mints or ts < mints[mint]:
+                    mints[mint] = ts
         return w, mints
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
@@ -127,13 +133,15 @@ def collect_buys(wallets: list[dict], window_hours: int,
             except Exception as e:  # noqa: BLE001
                 log.warning("wallet failed: %s", e)
                 continue
-            for mint in mints:
+            for mint, ts in mints.items():
                 entry = agg[mint]
                 entry["buyers"] += 1
                 entry["weight"] += w["weight"]
-                if len(entry["labels"]) < 8:
+                entry["timestamps"].append(ts)
+                entry["tiers"].append(w.get("tier", ""))
+                if len(entry["labels"]) < 10:
                     entry["labels"].append(w["label"])
-            if i % 50 == 0:
+            if i % 25 == 0:
                 log.info("  %d/%d wallets processed", i, len(futures))
 
     log.info("confluence computed across %d distinct mints", len(agg))

@@ -44,37 +44,47 @@ Ensuite ça tourne tout seul à 8 h et 22 h.
 
 ---
 
-## Tes 400 wallets
+## La liste de wallets
 
-Prépare un fichier nommé exactement `kol_wallets.csv` :
+`config/kol_wallets.csv` contient déjà **100 wallets**, extraits de ton export de
+~600 entrées : sides, doublons numérotés, wallets de dev, bundlers, bots et
+adresses d'exchange retirés, un seul wallet principal gardé par personne.
 
-```csv
-address,label,tier,weight
-7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU,Cented,S,3
-9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM,Euris,A,2
-```
+Répartition de départ : **12 S · 26 A · 34 B · 28 C**.
 
-Seule la colonne `address` est obligatoire. `tier` accepte S / A / B (poids 3 / 2
-/ 1,5). Un wallet dont tu sais qu'il bouge réellement les prix mérite un poids
-fort.
+Ces tiers sont des paris sur la réputation, rien de plus — personne ne peut
+mesurer l'Early Alpha Rate avant d'avoir fait tourner le tracker. Au bout de deux
+semaines environ, la section « Tracked wallets » du rapport affichera les tiers
+*mesurés* à côté des tiers de départ. Quand les deux divergent, c'est la mesure
+qui a raison.
 
-Dépose-le dans le dossier `config/` du dépôt : entre dans le dossier, puis
-**Add file** → **Upload files**.
+Pour modifier la liste : clique sur le fichier dans GitHub, puis sur le crayon,
+change ce que tu veux, **Commit changes**.
 
-Quand tu auras vérifié que les résultats sont cohérents, ouvre
-`config/settings.yaml`, clique sur le crayon, et passe `require_kol` à `true`.
-À partir de là, aucun token n'entre dans les runners sans validation par tes
-wallets. C'est le réglage qui transforme l'outil en filtre personnel.
+Quand la confluence donnera des résultats cohérents, ouvre
+`config/settings.yaml` et passe `require_kol` à `true`. À partir de là, aucun
+token n'entre dans les runners sans validation par tes wallets.
 
 ---
 
-## La clé Helius (49 $/mois, plus tard)
+## Les deux clés (plus tard)
 
-Sans elle, tout fonctionne sauf la confluence de wallets. Commence sans.
+Tout fonctionne sans elles. Commence sans, regarde une semaine de rapports.
 
-Quand tu la veux : [helius.dev](https://helius.dev) → crée un compte → copie la
-clé API. Puis dans ton dépôt : **Settings** → **Secrets and variables** →
-**Actions** → **New repository secret**. Nom : `HELIUS_API_KEY`. Valeur : ta clé.
+**`ANTHROPIC_API_KEY` — environ 15 $/mois. À prendre en premier.**
+C'est elle qui débloque l'analyse du *pourquoi* : sans clé le rapport explique
+les mouvements avec un moteur de règles, correct mais sec ; avec la clé tu
+obtiens une vraie lecture causale et un diagnostic écrit de chaque échec passé.
+C'est ce qui rend le rapport intéressant à lire.
+→ [console.anthropic.com](https://console.anthropic.com)
+
+**`HELIUS_API_KEY` — gratuit puis 49 $/mois.**
+Elle débloque le suivi de tes 100 wallets. Le palier gratuit suffit à 100 wallets
+et 2 runs par jour, donc essaie-le avant de payer.
+→ [helius.dev](https://helius.dev)
+
+Pour ajouter une clé : dans ton dépôt, **Settings** → **Secrets and variables** →
+**Actions** → **New repository secret**. Nom exact de la clé, puis sa valeur.
 
 Ne colle jamais une clé directement dans un fichier du dépôt : il est public.
 

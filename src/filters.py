@@ -61,8 +61,11 @@ class Token:
     kol_buyers: int = 0
     kol_weight: float = 0.0
     kol_names: list[str] = field(default_factory=list)
+    kol_tiers: list[str] = field(default_factory=list)
     score: float = 0.0
     score_parts: dict[str, float] = field(default_factory=dict)
+    holders: dict = field(default_factory=dict)     # from insiders.py
+    analysis: dict = field(default_factory=dict)    # from synthesis.py
 
     @property
     def age_hours(self) -> float:

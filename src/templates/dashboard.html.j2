@@ -12,7 +12,7 @@
     --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
     --series-1: #3987e5; --series-2: #d95926;
     --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
-    --up: #0ca30c;
+    --up: #0ca30c; --down: #e66767;
   }
   :root[data-theme="light"] {
     color-scheme: light;
@@ -20,7 +20,7 @@
     --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
     --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
     --series-1: #2a78d6; --series-2: #eb6834;
-    --up: #006300;
+    --up: #006300; --down: #c23b3b;
   }
   * { box-sizing: border-box; }
   body {
@@ -36,13 +36,15 @@
   .tag { display: inline-block; padding: 3px 10px; border-radius: 999px;
          background: var(--surface-1); border: 1px solid var(--ring);
          font-size: 12px; color: var(--ink-2); }
-  .headline { margin: 22px 0 28px; padding: 18px 22px; background: var(--surface-1);
+  .headline { margin: 22px 0 10px; padding: 20px 22px; background: var(--surface-1);
               border: 1px solid var(--ring); border-left: 3px solid var(--series-1);
-              border-radius: 10px; font-size: 17px; }
-  .headline strong { font-weight: 600; }
+              border-radius: 10px; font-size: 16px; line-height: 1.6; }
+  .headline .lead { font-weight: 600; }
+  .headline .row { margin-top: 10px; color: var(--ink-2); font-size: 14px; }
+  .headline .row b { color: var(--ink); font-weight: 600; }
 
   .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-           gap: 12px; margin-bottom: 34px; }
+           gap: 12px; margin: 22px 0 34px; }
   .tile { background: var(--surface-1); border: 1px solid var(--ring);
           border-radius: 10px; padding: 16px 18px; }
   .tile .k { font-size: 12px; color: var(--muted); text-transform: uppercase;
@@ -50,15 +52,16 @@
   .tile .v { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
   .tile .n { font-size: 12px; color: var(--ink-2); margin-top: 3px; }
 
-  h2 { font-size: 18px; margin: 40px 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 18px; margin: 42px 0 4px; letter-spacing: -0.01em; }
   h2 + .note { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
 
   .card { background: var(--surface-1); border: 1px solid var(--ring);
           border-radius: 10px; overflow: hidden; }
+  .scroll { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
   th { text-align: left; font-size: 11px; text-transform: uppercase;
        letter-spacing: 0.05em; color: var(--muted); font-weight: 500;
-       padding: 12px 12px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+       padding: 12px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
   td { padding: 12px; border-bottom: 1px solid var(--grid); vertical-align: middle; }
   tr:last-child td { border-bottom: 0; }
   tbody tr:hover { background: color-mix(in oklab, var(--series-1) 7%, transparent); }
@@ -70,11 +73,12 @@
   .nm { color: var(--muted); font-size: 12px; display: block; max-width: 190px;
         overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .up { color: var(--up); font-weight: 600; }
+  .down { color: var(--down); font-weight: 600; }
 
-  .scorecell { display: flex; align-items: center; gap: 9px; min-width: 128px; }
+  .scorecell { display: flex; align-items: center; gap: 9px; min-width: 120px; }
   .track { flex: 1; height: 7px; background: var(--grid); border-radius: 4px; }
   .fill { height: 100%; background: var(--series-1); border-radius: 4px; }
-  .scoreval { font-variant-numeric: tabular-nums; font-size: 13px; width: 34px;
+  .scoreval { font-variant-numeric: tabular-nums; font-size: 13px; width: 32px;
               text-align: right; color: var(--ink-2); }
 
   .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
@@ -86,9 +90,29 @@
   .b-serious .dot { background: var(--serious); } .b-serious { color: var(--serious); }
   .b-critical .dot { background: var(--critical); } .b-critical { color: var(--critical); }
   .theme { font-size: 11px; color: var(--ink-2); background: var(--plane);
-           border: 1px solid var(--ring); padding: 2px 8px; border-radius: 5px; }
+           border: 1px solid var(--ring); padding: 2px 8px; border-radius: 5px;
+           white-space: nowrap; }
   .kol { font-variant-numeric: tabular-nums; font-weight: 600; }
   .kol-0 { color: var(--muted); font-weight: 400; }
+  .ins-hi { color: var(--serious); font-weight: 600; }
+
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px,1fr));
+              gap: 12px; }
+  .why { background: var(--surface-1); border: 1px solid var(--ring);
+         border-radius: 10px; padding: 17px 19px; }
+  .why .top { display: flex; justify-content: space-between; align-items: baseline;
+              gap: 10px; margin-bottom: 4px; }
+  .why .t { font-weight: 600; font-size: 15px; }
+  .why .chg { font-variant-numeric: tabular-nums; }
+  .why .tagline { font-size: 12px; color: var(--series-1); margin-bottom: 10px;
+                  font-weight: 500; }
+  .why .body { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+  .why .risk { margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--grid);
+               font-size: 13px; color: var(--ink-2); }
+  .why .risk b { color: var(--ink); font-weight: 600; }
+  .conf { display: flex; align-items: center; gap: 8px; margin-top: 11px;
+          font-size: 12px; color: var(--muted); }
+  .conf .track { height: 5px; max-width: 110px; }
 
   .bars { padding: 20px 22px; }
   .bar-row { display: grid; grid-template-columns: 132px 1fr 96px;
@@ -111,6 +135,14 @@
              min-height: 30px; }
   .meta .r { display: flex; justify-content: space-between; font-size: 13px;
              color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+  .lessons { list-style: none; margin: 0; padding: 4px 0; }
+  .lessons li { padding: 12px 20px; border-bottom: 1px solid var(--grid);
+                font-size: 14px; color: var(--ink-2); display: flex; gap: 12px; }
+  .lessons li:last-child { border-bottom: 0; }
+  .lessons .n { color: var(--muted); font-variant-numeric: tabular-nums;
+                flex: none; width: 20px; }
+  .diag { font-size: 13px; color: var(--ink-2); max-width: 460px; }
 
   pre.thread { background: var(--surface-1); border: 1px solid var(--ring);
                border-radius: 10px; padding: 17px 19px; white-space: pre-wrap;
@@ -141,6 +173,7 @@
     <h1>Solana Runners</h1>
     <div class="sub">{{ date_str }} · {{ time_str }} CET ·
       <span class="tag">{{ "morning brief" if run == "morning" else "US session wrap" }}</span>
+      {% if not stats.llm_active %}<span class="tag">rule-based analysis</span>{% endif %}
     </div>
   </div>
   <button class="toggle" onclick="
@@ -150,7 +183,17 @@
   </button>
 </header>
 
-<div class="headline"><strong>Narrative of the day —</strong> {{ narrative.headline }}</div>
+<div class="headline">
+  <span class="lead">{{ narrative.headline }}</span>
+  {% if narrative.daily %}
+    {% if narrative.daily.rotation %}
+    <div class="row"><b>Rotation —</b> {{ narrative.daily.rotation }}</div>
+    {% endif %}
+    {% if narrative.daily.watch_next %}
+    <div class="row"><b>Watching —</b> {{ narrative.daily.watch_next }}</div>
+    {% endif %}
+  {% endif %}
+</div>
 
 <div class="tiles">
   <div class="tile"><div class="k">Runners kept</div>
@@ -161,29 +204,29 @@
     <div class="n">24h, runners kept</div></div>
   <div class="tile"><div class="k">Cut</div>
     <div class="v">{{ stats.rejected }}</div>
-    <div class="n">fake volume or structural risk</div></div>
+    <div class="n">fake volume, insiders or risk</div></div>
   <div class="tile"><div class="k">Wallets tracked</div>
     <div class="v">{{ stats.wallets_tracked }}</div>
     <div class="n">{{ "confluence on" if stats.kol_active else "confluence off" }}</div></div>
-  {% if calibration.stats and calibration.stats.n %}
-  <div class="tile"><div class="k">Hit rate</div>
-    <div class="v">{{ calibration.stats.hit_rate }}%</div>
-    <div class="n">{{ calibration.stats.n }} calls measured at 24h</div></div>
+  {% if postmortem.scorecard %}
+  <div class="tile"><div class="k">Past calls up</div>
+    <div class="v">{{ postmortem.scorecard.accuracy }}%</div>
+    <div class="n">{{ postmortem.scorecard.reviewed }} reviewed at ~24h</div></div>
   {% endif %}
 </div>
 
 <h2>Today's runners</h2>
 <p class="note">Ranked by composite score. Every row cleared the liquidity, age,
-   holder-structure and volume-credibility filters.</p>
-<div class="card">
+   holder-concentration and volume-credibility gates.</p>
+<div class="card scroll">
 {% if runners %}
 <table>
   <thead><tr>
-    <th></th><th>Token</th><th class="hide-s">Theme</th>
+    <th></th><th>Token</th><th class="hide-s">Read</th>
     <th class="num">24h</th><th class="num">Volume</th>
     <th class="num hide-s">Liquidity</th><th class="num hide-s">Mcap</th>
-    <th class="num hide-s">Age</th><th class="num">KOL</th>
-    <th>Trust</th><th>Score</th>
+    <th class="num hide-s">Insiders</th><th class="num hide-s">Age</th>
+    <th class="num">KOL</th><th>Trust</th><th>Score</th>
   </tr></thead>
   <tbody>
   {% for t in runners %}
@@ -195,11 +238,14 @@
         {% else %}${{ t.symbol }}{% endif %}
         <span class="nm">{{ t.name }}</span>
       </td>
-      <td class="hide-s"><span class="theme">{{ classify(t) }}</span></td>
+      <td class="hide-s"><span class="theme">{{ t.analysis.narrative_tag or classify(t) }}</span></td>
       <td class="num up">{{ t.chg_h24|pct }}</td>
       <td class="num">{{ t.vol_h24|usd }}</td>
       <td class="num hide-s">{{ t.liquidity|usd }}</td>
       <td class="num hide-s">{{ t.mcap|usd }}</td>
+      <td class="num hide-s {{ 'ins-hi' if t.holders.insider_pct and t.holders.insider_pct >= 15 }}"
+          title="top 10 hold {{ t.holders.top10_pct|default('?') }}% · {{ t.holders.holder_count|default('?') }} holders">
+        {% if t.holders.available %}{{ t.holders.insider_pct }}%{% else %}—{% endif %}</td>
       <td class="num hide-s">{{ t.age_hours|age }}</td>
       <td class="num kol {{ 'kol-0' if not t.kol_buyers }}"
           title="{{ t.kol_names|join(', ') if t.kol_names else 'no tracked wallet' }}">
@@ -222,9 +268,119 @@
 {% endif %}
 </div>
 
+{% set explained = runners|selectattr('analysis.why_ran')|list %}
+{% if explained %}
+<h2>Why they ran</h2>
+<p class="note">Built from launch metadata, attention signals, the tracked-wallet
+   timeline and holder structure — not from what the token is called.</p>
+<div class="why-grid">
+  {% for t in explained %}
+  <div class="why">
+    <div class="top">
+      <span class="t">${{ t.symbol }}</span>
+      <span class="chg up">{{ t.chg_h24|pct }}</span>
+    </div>
+    {% if t.analysis.primary_driver %}
+    <div class="tagline">{{ driver_label(t.analysis.primary_driver) }}</div>
+    {% endif %}
+    <div class="body">{{ t.analysis.why_ran }}</div>
+    {% if t.analysis.main_risk %}
+    <div class="risk"><b>Main risk —</b> {{ t.analysis.main_risk }}</div>
+    {% endif %}
+    {% if t.analysis.confidence is not none %}
+    <div class="conf">
+      <span>confidence</span>
+      <div class="track"><div class="fill"
+        style="width: {{ t.analysis.confidence }}%"></div></div>
+      <span>{{ t.analysis.confidence }}/100</span>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if verdicts %}
+<h2>What happened to the last calls</h2>
+<p class="note">Every session re-prices the previous picks. Up is good data, down
+   is bad data and gets a diagnosis. Sorted worst first — the failures are the
+   part worth reading.</p>
+<div class="card scroll">
+<table>
+  <thead><tr><th>Token</th><th class="num">Called at</th><th class="num">Now</th>
+    <th class="num">Change</th><th>Verdict</th>
+    <th class="hide-s">What the evidence said</th></tr></thead>
+  <tbody>
+  {% for v in verdicts %}
+    {% set vs, vl = verdict_label(v.label) %}
+    <tr>
+      <td class="sym">${{ v.symbol }}</td>
+      <td class="num">{{ v.entry_mcap|usd }}</td>
+      <td class="num">{{ v.current_mcap|usd }}</td>
+      <td class="num {{ 'up' if v.change_pct > 0 else 'down' }}">{{ v.change_pct|pct }}</td>
+      <td><span class="badge b-{{ vs }}"><span class="dot"></span>{{ vl }}</span></td>
+      <td class="hide-s"><div class="diag">{{ v.diagnosis or "—" }}</div></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+{% if postmortem.lessons %}
+<h2>What the record has taught the model</h2>
+<p class="note">Patterns only appear here once enough past calls support them.
+   These are fed back into the next session's analysis.</p>
+<div class="card">
+  <ul class="lessons">
+  {% for le in postmortem.lessons[:10] %}
+    <li><span class="n">{{ loop.index }}</span><span>{{ le }}</span></li>
+  {% endfor %}
+  </ul>
+</div>
+{% if postmortem.suggested_config %}
+<p class="note" style="margin-top:14px">Threshold changes these patterns imply
+  {% if not stats.auto_lessons %}(suggested, not applied){% endif %}:
+  {% for k, c in postmortem.suggested_config.items() %}
+    <code>{{ k }}</code> {{ c.from }} → {{ c.to }}{% if not loop.last %}, {% endif %}
+  {% endfor %}
+</p>
+{% endif %}
+{% endif %}
+
+{% if wallet_ranking %}
+<h2>Tracked wallets, ranked by what they actually do</h2>
+<p class="note">Early Alpha is the share of a wallet's entries where the token
+   went on to multiply <em>after</em> they bought. Tiers start as reputation
+   priors and are replaced by measurement as entries accumulate.</p>
+<div class="card scroll">
+<table>
+  <thead><tr><th>Wallet</th><th>Tier</th><th class="num">Value</th>
+    <th class="num hide-s">Entries</th><th class="num">≥2x after entry</th>
+    <th class="num hide-s">≥5x</th><th class="num hide-s">Median entry mcap</th>
+    <th class="hide-s">Basis</th></tr></thead>
+  <tbody>
+  {% for w in wallet_ranking %}
+  <tr>
+    <td class="sym">{{ w.label }}</td>
+    <td><span class="theme">{{ w.measured_tier }}{% if w.tier_changed %} ←{{ w.tier }}{% endif %}</span></td>
+    <td class="num">{{ w.value|round|int }}</td>
+    <td class="num hide-s">{{ (w.metrics.calls if w.metrics else 0) }}</td>
+    <td class="num">{% if w.metrics %}{{ w.metrics.early_alpha_2x }}%{% else %}—{% endif %}</td>
+    <td class="num hide-s">{% if w.metrics %}{{ w.metrics.early_alpha_5x }}%{% else %}—{% endif %}</td>
+    <td class="num hide-s">{% if w.metrics %}{{ w.metrics.median_entry_mcap|usd }}{% else %}—{% endif %}</td>
+    <td class="hide-s" style="color:var(--muted);font-size:13px">{{ w.basis }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
 {% if narrative.themes %}
 <h2>Where the volume is going</h2>
-<p class="note">Combined 24h volume of the runners kept, by theme.</p>
+<p class="note">Combined 24h volume of the runners kept, by theme. This is the
+   coarse view — the causal reads above are the actionable one.</p>
 <div class="card bars">
   {% for th in (narrative.themes|sort(attribute='total_volume', reverse=true))[:8] %}
   <div class="bar-row" title="{{ th.count }} runners · median {{ th.median_change }}% · {{ th.tokens|join(', ') }}">
@@ -240,8 +396,7 @@
 
 {% if narrative.emerging %}
 <h2>What's forming</h2>
-<p class="note">Narratives that were absent or far smaller on previous days.
-   This is the section worth watching — everyone already sees the rest.</p>
+<p class="note">Narratives that were absent or far smaller on previous days.</p>
 <div class="meta-grid">
   {% for m in narrative.emerging %}
   <div class="meta">
@@ -257,7 +412,7 @@
 {% if narrative.metas %}
 <h2>Metas ranked by the market</h2>
 <p class="note">Source: Dexscreener meta ranking, sorted by 6h market-cap change.</p>
-<div class="card">
+<div class="card scroll">
 <table>
   <thead><tr><th>Meta</th><th class="num">1h</th><th class="num">6h</th>
     <th class="num">24h</th><th class="num hide-s">Tokens</th>
@@ -280,10 +435,10 @@
 <h2>Cut — and why</h2>
 <p class="note">Tokens climbing on the charts that the filter refuses.
    Often the best thing to post: nobody else shows this.</p>
-<div class="card">
+<div class="card scroll">
 <table>
   <thead><tr><th>Token</th><th class="num">24h</th><th class="num">Volume</th>
-    <th class="num hide-s">Fake vol.</th><th class="num hide-s">Risk</th>
+    <th class="num hide-s">Fake vol.</th><th class="num hide-s">Insiders</th>
     <th>Reason</th></tr></thead>
   <tbody>
   {% for r in rejected %}
@@ -291,7 +446,7 @@
     <td class="num">{{ r.chg|pct }}</td>
     <td class="num">{{ r.vol|usd }}</td>
     <td class="num hide-s">{{ r.wash }}</td>
-    <td class="num hide-s">{{ r.rug }}</td>
+    <td class="num hide-s">{% if r.insiders %}{{ r.insiders }}%{% else %}—{% endif %}</td>
     <td style="color: var(--ink-2)">{{ r.reason }}</td></tr>
   {% endfor %}
   </tbody>
@@ -301,8 +456,8 @@
 
 {% if threads %}
 <h2>Post drafts</h2>
-<p class="note">Generated from the numbers above. Rewrite them in your own voice —
-   a thread that reads like a bot does not build followers.</p>
+<p class="note">Generated from the numbers and the reasoning above. Rewrite them
+   in your own voice — a thread that reads like a bot does not build followers.</p>
 {% for th in threads %}
 <div class="thread-t">{{ th.title }}</div>
 <pre class="thread">{{ th.body }}</pre>
@@ -337,11 +492,13 @@
 
 <footer>
   Generated automatically on {{ date_str }} at {{ time_str }} CET.
-  Sources: Dexscreener, GeckoTerminal, RugCheck{% if stats.kol_active %}, Helius{% endif %}.
-  {{ stats.analyzed }} tokens analysed in depth.<br><br>
+  Sources: Dexscreener, GeckoTerminal, RugCheck, pump.fun{% if stats.kol_active %}, Helius{% endif %}{% if stats.llm_active %}, Anthropic{% endif %}.
+  {{ stats.analyzed }} tokens analysed, {{ stats.researched }} researched in depth.<br><br>
   This is a market-data analysis tool, not investment advice. The filters reduce
   exposure to the most common frauds, they do not remove it: a token can clear
-  every check and still collapse. Do not base any decision on this report alone.
+  every check and still collapse. The causal reads above are hypotheses built
+  from public data, not confirmed facts. Do not base any decision on this report
+  alone.
 </footer>
 
 </div>

@@ -52,6 +52,7 @@ _limits = {
     "ds": RateLimiter(55),       # docs: 60/min across all endpoints
     "gt": RateLimiter(28),       # docs: 30/min keyless
     "rc": RateLimiter(55),
+    "pf": RateLimiter(60),       # pump.fun public frontend API
     "helius": RateLimiter(540),  # 10 req/s on the Developer plan
 }
 

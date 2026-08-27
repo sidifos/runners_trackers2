@@ -35,9 +35,17 @@ def _now() -> datetime:
     return datetime.now(timezone.utc)
 
 
-def record_picks(tokens: list, history_dir: str | Path, run_label: str) -> None:
+def record_picks(tokens: list, history_dir: str | Path, run_label: str,
+                 extra: dict | None = None) -> None:
+    """Archive this session's calls.
+
+    `extra` carries the evidence snapshot and the causal analysis per mint, so
+    the next post-mortem can judge the call against what we actually knew at the
+    time rather than against hindsight.
+    """
     d = Path(history_dir)
     d.mkdir(parents=True, exist_ok=True)
+    extra = extra or {}
     payload = {
         "recorded_at": _now().isoformat(),
         "run": run_label,
@@ -52,6 +60,7 @@ def record_picks(tokens: list, history_dir: str | Path, run_label: str) -> None:
                 "kol_buyers": t.kol_buyers,
                 "wash_score": t.wash_score,
                 "rug_score": t.rug_score,
+                **extra.get(t.mint, {}),
             }
             for t in tokens[:20]
         ],
