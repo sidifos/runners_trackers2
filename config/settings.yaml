@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# Tracker settings. Everything here is editable without touching the code.
+# Defaults are deliberately strict: better to publish 8 solid runners than
+# 40 of which 12 rug the same day.
+# ---------------------------------------------------------------------------
+
+# --- Entry gates (hard filters, applied before ranking) --------------------
+min_liquidity_usd: 25000      # below this you cannot exit without breaking price
+min_volume_usd: 100000        # minimum 24h volume
+min_mcap_usd: 80000
+min_age_hours: 3              # gives instant rugs time to reveal themselves
+min_txns: 250                 # 24h transaction count
+min_change_pct: 15            # a "runner" has to have moved
+
+# --- Rejection thresholds --------------------------------------------------
+wash_reject: 55               # above this the volume is not credible
+rug_reject: 55                # above this the structural risk is too high
+unknown_rug_score: 35         # penalty when RugCheck does not answer
+rugcheck_score_alarm: 60
+
+# --- Wash-trading detection ------------------------------------------------
+vol_liq_high: 25              # volume/liquidity ratio worth questioning
+vol_liq_extreme: 70           # ratio that is almost always manufactured
+flat_price_pct: 15            # "lots of volume, no price" = round-trips
+symmetry_tight: 0.02          # buy/sell balance that is too perfect
+micro_trade_usd: 25           # average trade size below which it is spam
+cadence_flat: 0.10            # machine-like regularity of transaction flow
+size_uniform: 0.05            # identical trade size at 1h and 24h
+liq_mcap_thin: 0.02           # starved liquidity against market cap
+
+# --- Tracked wallet confluence ---------------------------------------------
+require_kol: false            # set true once your wallet list is loaded and trusted
+min_kol_buyers: 2             # tracked wallets required when require_kol is on
+kol_window_hours: 24
+kol_saturation: 12            # wallet count at which the bonus plateaus
+kol_max_multiplier: 1.8       # maximum multiplier applied to the score
+
+# --- Output ----------------------------------------------------------------
+top_n: 12                     # runners published in the report
+max_candidates: 220           # cap on tokens analysed per run (API cost)
