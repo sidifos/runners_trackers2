@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # full history, so the merge below can resolve
 
       - uses: actions/setup-python@v5
         with:
@@ -52,17 +54,46 @@ jobs:
           path: out/
           retention-days: 30
 
-      - name: Persist history and calibration
-        run: |
-          git config user.name  "tracker-bot"
-          git config user.email "tracker-bot@users.noreply.github.com"
-          git add -A data out
-          git diff --staged --quiet || git commit -m "run ${{ steps.kind.outputs.run }} $(date -u +%F_%H:%M)"
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
-          git push
-
+      # Publishing comes before persistence on purpose: getting the report onto
+      # the page is the job. A hiccup writing history back must never be able to
+      # stop the site from updating.
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
       - uses: actions/deploy-pages@v4
+
+      - name: Persist history and calibration
+        continue-on-error: true    # never fail the run over a git race
+        run: |
+          set -u
+          git config user.name  "tracker-bot"
+          git config user.email "tracker-bot@users.noreply.github.com"
+          git add -A data out
+          if git diff --staged --quiet; then
+            echo "nothing new to persist"
+            exit 0
+          fi
+          git commit -m "run ${{ steps.kind.outputs.run }} $(date -u +%F_%H:%M)"
+
+          # data/ and out/ are regenerated every run, so whenever the remote has
+          # moved on, the freshly produced files are the ones that should win.
+          # A rebase would stop and ask a human; -X ours resolves and continues.
+          for attempt in 1 2 3; do
+            git fetch origin "$GITHUB_REF_NAME" || true
+            if ! git merge -X ours "origin/$GITHUB_REF_NAME" \
+                   -m "merge remote before publishing run output"; then
+              git merge --abort || true
+              echo "merge attempt $attempt failed, retrying"
+              sleep 5
+              continue
+            fi
+            if git push origin "HEAD:$GITHUB_REF_NAME"; then
+              echo "history persisted on attempt $attempt"
+              exit 0
+            fi
+            echo "push attempt $attempt rejected, retrying"
+            sleep 5
+          done
+          echo "could not persist history this run — the report was still published"
+          exit 1
