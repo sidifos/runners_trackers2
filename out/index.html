@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solana Runners — Thursday, August 27, 2026</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --surface-1: #1a1a19; --plane: #0d0d0d;
+    --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --series-1: #3987e5; --series-2: #d95926;
+    --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
+    --up: #0ca30c;
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --surface-1: #fcfcfb; --plane: #f9f9f7;
+    --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+    --series-1: #2a78d6; --series-2: #eb6834;
+    --up: #006300;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--plane); color: var(--ink);
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; justify-content: space-between; align-items: flex-start;
+           gap: 24px; flex-wrap: wrap; margin-bottom: 8px; }
+  h1 { font-size: 27px; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--ink-2); font-size: 14px; }
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 999px;
+         background: var(--surface-1); border: 1px solid var(--ring);
+         font-size: 12px; color: var(--ink-2); }
+  .headline { margin: 22px 0 28px; padding: 18px 22px; background: var(--surface-1);
+              border: 1px solid var(--ring); border-left: 3px solid var(--series-1);
+              border-radius: 10px; font-size: 17px; }
+  .headline strong { font-weight: 600; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+           gap: 12px; margin-bottom: 34px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--ring);
+          border-radius: 10px; padding: 16px 18px; }
+  .tile .k { font-size: 12px; color: var(--muted); text-transform: uppercase;
+             letter-spacing: 0.05em; margin-bottom: 6px; }
+  .tile .v { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+  .tile .n { font-size: 12px; color: var(--ink-2); margin-top: 3px; }
+
+  h2 { font-size: 18px; margin: 40px 0 4px; letter-spacing: -0.01em; }
+  h2 + .note { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+
+  .card { background: var(--surface-1); border: 1px solid var(--ring);
+          border-radius: 10px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.05em; color: var(--muted); font-weight: 500;
+       padding: 12px 12px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  td { padding: 12px; border-bottom: 1px solid var(--grid); vertical-align: middle; }
+  tr:last-child td { border-bottom: 0; }
+  tbody tr:hover { background: color-mix(in oklab, var(--series-1) 7%, transparent); }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .rank { color: var(--muted); font-variant-numeric: tabular-nums; width: 26px; }
+  .sym { font-weight: 600; }
+  .sym a { color: inherit; text-decoration: none; }
+  .sym a:hover { text-decoration: underline; }
+  .nm { color: var(--muted); font-size: 12px; display: block; max-width: 190px;
+        overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .up { color: var(--up); font-weight: 600; }
+
+  .scorecell { display: flex; align-items: center; gap: 9px; min-width: 128px; }
+  .track { flex: 1; height: 7px; background: var(--grid); border-radius: 4px; }
+  .fill { height: 100%; background: var(--series-1); border-radius: 4px; }
+  .scoreval { font-variant-numeric: tabular-nums; font-size: 13px; width: 34px;
+              text-align: right; color: var(--ink-2); }
+
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+           padding: 3px 9px; border-radius: 999px; border: 1px solid var(--ring);
+           white-space: nowrap; }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+  .b-good .dot { background: var(--good); } .b-good { color: var(--good); }
+  .b-warning .dot { background: var(--warning); } .b-warning { color: var(--warning); }
+  .b-serious .dot { background: var(--serious); } .b-serious { color: var(--serious); }
+  .b-critical .dot { background: var(--critical); } .b-critical { color: var(--critical); }
+  .theme { font-size: 11px; color: var(--ink-2); background: var(--plane);
+           border: 1px solid var(--ring); padding: 2px 8px; border-radius: 5px; }
+  .kol { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .kol-0 { color: var(--muted); font-weight: 400; }
+
+  .bars { padding: 20px 22px; }
+  .bar-row { display: grid; grid-template-columns: 132px 1fr 96px;
+             align-items: center; gap: 12px; padding: 5px 0; cursor: default; }
+  .bar-row:hover .bar { filter: brightness(1.15); }
+  .bar-label { font-size: 13px; color: var(--ink-2); overflow: hidden;
+               text-overflow: ellipsis; white-space: nowrap; }
+  .bar-track { height: 13px; }
+  .bar { height: 100%; background: var(--series-1);
+         border-radius: 0 4px 4px 0; min-width: 3px; }
+  .bar-val { font-size: 13px; color: var(--ink-2); text-align: right;
+             font-variant-numeric: tabular-nums; }
+
+  .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+               gap: 12px; }
+  .meta { background: var(--surface-1); border: 1px solid var(--ring);
+          border-radius: 10px; padding: 15px 17px; }
+  .meta .nmm { font-weight: 600; margin-bottom: 3px; }
+  .meta .d { font-size: 12px; color: var(--muted); margin-bottom: 9px;
+             min-height: 30px; }
+  .meta .r { display: flex; justify-content: space-between; font-size: 13px;
+             color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+  pre.thread { background: var(--surface-1); border: 1px solid var(--ring);
+               border-radius: 10px; padding: 17px 19px; white-space: pre-wrap;
+               font: 14px/1.6 system-ui, -apple-system, sans-serif;
+               color: var(--ink); margin: 0 0 14px; }
+  .thread-t { font-size: 12px; color: var(--muted); text-transform: uppercase;
+              letter-spacing: 0.05em; margin: 16px 0 7px; }
+
+  footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--grid);
+           color: var(--muted); font-size: 12px; }
+  .toggle { background: var(--surface-1); color: var(--ink-2);
+            border: 1px solid var(--ring); border-radius: 7px; padding: 7px 13px;
+            font-size: 13px; cursor: pointer; font-family: inherit; }
+  .toggle:hover { color: var(--ink); }
+  .empty { padding: 26px; color: var(--muted); text-align: center; font-size: 14px; }
+  @media (max-width: 760px) {
+    .hide-s { display: none; }
+    .wrap { padding: 20px 13px 56px; }
+    .bar-row { grid-template-columns: 94px 1fr 74px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>Solana Runners</h1>
+    <div class="sub">Thursday, August 27, 2026 · 20:08 CET ·
+      <span class="tag">morning brief</span>
+    </div>
+  </div>
+  <button class="toggle" onclick="
+    document.documentElement.dataset.theme =
+      document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'">
+    Light / dark
+  </button>
+</header>
+
+<div class="headline"><strong>Narrative of the day —</strong> unclassified leads with 6 runners and $11,718,868 in volume</div>
+
+<div class="tiles">
+  <div class="tile"><div class="k">Runners kept</div>
+    <div class="v">12</div>
+    <div class="n">of 126 tokens scanned</div></div>
+  <div class="tile"><div class="k">Combined volume</div>
+    <div class="v">$61.3M</div>
+    <div class="n">24h, runners kept</div></div>
+  <div class="tile"><div class="k">Cut</div>
+    <div class="v">16</div>
+    <div class="n">fake volume or structural risk</div></div>
+  <div class="tile"><div class="k">Wallets tracked</div>
+    <div class="v">0</div>
+    <div class="n">confluence off</div></div>
+</div>
+
+<h2>Today's runners</h2>
+<p class="note">Ranked by composite score. Every row cleared the liquidity, age,
+   holder-structure and volume-credibility filters.</p>
+<div class="card">
+<table>
+  <thead><tr>
+    <th></th><th>Token</th><th class="hide-s">Theme</th>
+    <th class="num">24h</th><th class="num">Volume</th>
+    <th class="num hide-s">Liquidity</th><th class="num hide-s">Mcap</th>
+    <th class="num hide-s">Age</th><th class="num">KOL</th>
+    <th>Trust</th><th>Score</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td class="rank">1</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/8juqyqwyqpjbvzh2oskzc918j7dmyyzpb1khvyzrku3o" target="_blank" rel="noopener">$PENSION</a>
+        <span class="nm">Boring Pension</span>
+      </td>
+      <td class="hide-s"><span class="theme">unclassified</span></td>
+      <td class="num up">+766%</td>
+      <td class="num">$128.7k</td>
+      <td class="num hide-s">$62.9k</td>
+      <td class="num hide-s">$240.3k</td>
+      <td class="num hide-s">2d</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 0/100 · structural risk 0/100"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 100.0%"></div></div>
+          <span class="scoreval">65</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">2</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/dfmgeehqspveoggmn5wwxri8lmkmgswbhe3q5npdoxus" target="_blank" rel="noopener">$cat</a>
+        <span class="nm">just a cat</span>
+      </td>
+      <td class="hide-s"><span class="theme">animals</span></td>
+      <td class="num up">+377%</td>
+      <td class="num">$1.1M</td>
+      <td class="num hide-s">$42.8k</td>
+      <td class="num hide-s">$225.5k</td>
+      <td class="num hide-s">23h</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 0/100 · structural risk 0/100"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 91.9%"></div></div>
+          <span class="scoreval">60</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">3</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/eytdjhqisrqj2cgh71mxcsttqqhzdjtx3zufb7qgonzp" target="_blank" rel="noopener">$ANTSEM</a>
+        <span class="nm">The Black Ant</span>
+      </td>
+      <td class="hide-s"><span class="theme">animals</span></td>
+      <td class="num up">+773%</td>
+      <td class="num">$2.5M</td>
+      <td class="num hide-s">$56.5k</td>
+      <td class="num hide-s">$315.1k</td>
+      <td class="num hide-s">6h</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 15/100 · structural risk 0/100 — volume 44× liquidity"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 84.8%"></div></div>
+          <span class="scoreval">55</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">4</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/3dcwhqjp6jbtjpq8ga335hwgsqvs7uqmdmex7igjmnpj" target="_blank" rel="noopener">$fone</a>
+        <span class="nm">apeonfone</span>
+      </td>
+      <td class="hide-s"><span class="theme">animals</span></td>
+      <td class="num up">+25,620%</td>
+      <td class="num">$37.6M</td>
+      <td class="num hide-s">$431.8k</td>
+      <td class="num hide-s">$10.5M</td>
+      <td class="num hide-s">18h</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-serious" title="suspicious volume 45/100 · structural risk 0/100 — volume 87× liquidity; machine-like transaction cadence"><span class="dot"></span>shaky</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 80.5%"></div></div>
+          <span class="scoreval">53</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">5</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/3rg9g2vu8ciahkyraadpuadbmcgg5uhvqv63h45mmw48" target="_blank" rel="noopener">$CALL</a>
+        <span class="nm">CallFi</span>
+      </td>
+      <td class="hide-s"><span class="theme">unclassified</span></td>
+      <td class="num up">+372%</td>
+      <td class="num">$779.3k</td>
+      <td class="num hide-s">$46.3k</td>
+      <td class="num hide-s">$287.1k</td>
+      <td class="num hide-s">3h</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-warning" title="suspicious volume 20/100 · structural risk 0/100 — buys/sells symmetric to 0.4%"><span class="dot"></span>watch</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 79.6%"></div></div>
+          <span class="scoreval">52</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">6</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/28r8n5ltpeeakbxyjxa6itylzp2h6aygczfb5ud2eh4m" target="_blank" rel="noopener">$TOADS</a>
+        <span class="nm">Poet Toads</span>
+      </td>
+      <td class="hide-s"><span class="theme">unclassified</span></td>
+      <td class="num up">+324%</td>
+      <td class="num">$2.8M</td>
+      <td class="num hide-s">$104.3k</td>
+      <td class="num hide-s">$711.9k</td>
+      <td class="num hide-s">9d</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 15/100 · structural risk 0/100 — volume 27× liquidity"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 75.6%"></div></div>
+          <span class="scoreval">49</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">7</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/5a15quc6kmxw9dsvpvuv6zdttbeywbn2scyy1meqjfqs" target="_blank" rel="noopener">$GTA6</a>
+        <span class="nm">GTA VI</span>
+      </td>
+      <td class="hide-s"><span class="theme">unclassified</span></td>
+      <td class="num up">+150%</td>
+      <td class="num">$1.9M</td>
+      <td class="num hide-s">$229.4k</td>
+      <td class="num hide-s">$2.4M</td>
+      <td class="num hide-s">21d</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 10/100 · structural risk 0/100 — uniform trade size"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 75.5%"></div></div>
+          <span class="scoreval">49</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">8</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/9vix1vducteoc2wertsp2tudxxpwaf69aeet8enpjpsn" target="_blank" rel="noopener">$aura</a>
+        <span class="nm">aura</span>
+      </td>
+      <td class="hide-s"><span class="theme">unclassified</span></td>
+      <td class="num up">+70%</td>
+      <td class="num">$3.6M</td>
+      <td class="num hide-s">$2.7M</td>
+      <td class="num hide-s">$30.8M</td>
+      <td class="num hide-s">—</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 0/100 · structural risk 0/100"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 73.5%"></div></div>
+          <span class="scoreval">48</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">9</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/6tmvliotrzw65rwraftnwpsf1jikywrvsp87w9h9em2a" target="_blank" rel="noopener">$PANTS</a>
+        <span class="nm">dogwifpants</span>
+      </td>
+      <td class="hide-s"><span class="theme">animals</span></td>
+      <td class="num up">+205%</td>
+      <td class="num">$1.8M</td>
+      <td class="num hide-s">$161.4k</td>
+      <td class="num hide-s">$1.9M</td>
+      <td class="num hide-s">8d</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-warning" title="suspicious volume 20/100 · structural risk 0/100 — buys/sells symmetric to 0.6%"><span class="dot"></span>watch</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 70.8%"></div></div>
+          <span class="scoreval">46</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">10</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/6a9co5jsy3c5knk9n2owwfwyrita4dajpeyqmy8dd6b2" target="_blank" rel="noopener">$中国黑牛</a>
+        <span class="nm">Chinese Black Bull</span>
+      </td>
+      <td class="hide-s"><span class="theme">animals</span></td>
+      <td class="num up">+263%</td>
+      <td class="num">$1.5M</td>
+      <td class="num hide-s">$47.5k</td>
+      <td class="num hide-s">$270.9k</td>
+      <td class="num hide-s">6h</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 15/100 · structural risk 0/100 — volume 31× liquidity"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 70.2%"></div></div>
+          <span class="scoreval">46</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">11</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/53anp2qvq5pmqma7nzrkuxu1btkfnsqqy4uzczssnsvd" target="_blank" rel="noopener">$MEAT</a>
+        <span class="nm">Meat Proxy Official</span>
+      </td>
+      <td class="hide-s"><span class="theme">ai-agents</span></td>
+      <td class="num up">+127%</td>
+      <td class="num">$5.3M</td>
+      <td class="num hide-s">$30.5k</td>
+      <td class="num hide-s">$88.8k</td>
+      <td class="num hide-s">20h</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-warning" title="suspicious volume 30/100 · structural risk 0/100 — volume 173× liquidity"><span class="dot"></span>watch</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 68.0%"></div></div>
+          <span class="scoreval">44</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="rank">12</td>
+      <td class="sym">
+<a href="https://dexscreener.com/solana/5pghkctym6odbhgo2tkmst2ajmjsb2uzbqrkkn4zuft5" target="_blank" rel="noopener">$Jimothy</a>
+        <span class="nm">Jimothy The Raccoon</span>
+      </td>
+      <td class="hide-s"><span class="theme">unclassified</span></td>
+      <td class="num up">+19%</td>
+      <td class="num">$2.6M</td>
+      <td class="num hide-s">$1.0M</td>
+      <td class="num hide-s">$16.3M</td>
+      <td class="num hide-s">1mo</td>
+      <td class="num kol kol-0"
+          title="no tracked wallet">
+        —</td>
+      <td><span class="badge b-good" title="suspicious volume 0/100 · structural risk 0/100"><span class="dot"></span>clean</span></td>
+      <td>
+        <div class="scorecell">
+          <div class="track"><div class="fill"
+               style="width: 67.5%"></div></div>
+          <span class="scoreval">44</span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Where the volume is going</h2>
+<p class="note">Combined 24h volume of the runners kept, by theme.</p>
+<div class="card bars">
+  <div class="bar-row" title="5 runners · median 377.0% · cat, ANTSEM, fone, PANTS, 中国黑牛">
+    <div class="bar-label">animals</div>
+    <div class="bar-track">
+      <div class="bar" style="width: 100.0%"></div>
+    </div>
+    <div class="bar-val">$44.3M</div>
+  </div>
+  <div class="bar-row" title="6 runners · median 324.0% · PENSION, CALL, TOADS, GTA6, aura, Jimothy">
+    <div class="bar-label">unclassified</div>
+    <div class="bar-track">
+      <div class="bar" style="width: 26.4%"></div>
+    </div>
+    <div class="bar-val">$11.7M</div>
+  </div>
+  <div class="bar-row" title="1 runners · median 127.0% · MEAT">
+    <div class="bar-label">ai-agents</div>
+    <div class="bar-track">
+      <div class="bar" style="width: 11.9%"></div>
+    </div>
+    <div class="bar-val">$5.3M</div>
+  </div>
+</div>
+
+<h2>What's forming</h2>
+<p class="note">Narratives that were absent or far smaller on previous days.
+   This is the section worth watching — everyone already sees the rest.</p>
+<div class="meta-grid">
+  <div class="meta">
+    <div class="nmm">Brainrot</div>
+    <div class="d">Historians will struggle with this</div>
+    <div class="r"><span>new</span><span>+11% / 6h</span></div>
+    <div class="r"><span>25 tokens</span><span>$16.0M</span></div>
+  </div>
+  <div class="meta">
+    <div class="nmm">Celebrity</div>
+    <div class="d">This has never backfired</div>
+    <div class="r"><span>new</span><span>+7% / 6h</span></div>
+    <div class="r"><span>6 tokens</span><span>$956.8M</span></div>
+  </div>
+  <div class="meta">
+    <div class="nmm">TikTok</div>
+    <div class="d">If it trends, it trades</div>
+    <div class="r"><span>new</span><span>+7% / 6h</span></div>
+    <div class="r"><span>47 tokens</span><span>$24.3M</span></div>
+  </div>
+  <div class="meta">
+    <div class="nmm">Internet Animals</div>
+    <div class="d">Famous both online and on-chain</div>
+    <div class="r"><span>new</span><span>+5% / 6h</span></div>
+    <div class="r"><span>43 tokens</span><span>$121.5M</span></div>
+  </div>
+  <div class="meta">
+    <div class="nmm">x402</div>
+    <div class="d">The internet-native payment protocol</div>
+    <div class="r"><span>new</span><span>+5% / 6h</span></div>
+    <div class="r"><span>17 tokens</span><span>$143.3M</span></div>
+  </div>
+  <div class="meta">
+    <div class="nmm">Knockoff Legends</div>
+    <div class="d">Temu version, MS Paint edition</div>
+    <div class="r"><span>new</span><span>+4% / 6h</span></div>
+    <div class="r"><span>37 tokens</span><span>$5.9M</span></div>
+  </div>
+  <div class="meta">
+    <div class="nmm">Dog</div>
+    <div class="d">Furry friends and funny memes</div>
+    <div class="r"><span>new</span><span>+3% / 6h</span></div>
+    <div class="r"><span>65 tokens</span><span>$1.0B</span></div>
+  </div>
+  <div class="meta">
+    <div class="nmm">Cat</div>
+    <div class="d">pspspspspsp</div>
+    <div class="r"><span>new</span><span>+3% / 6h</span></div>
+    <div class="r"><span>93 tokens</span><span>$764.3M</span></div>
+  </div>
+</div>
+
+<h2>Metas ranked by the market</h2>
+<p class="note">Source: Dexscreener meta ranking, sorted by 6h market-cap change.</p>
+<div class="card">
+<table>
+  <thead><tr><th>Meta</th><th class="num">1h</th><th class="num">6h</th>
+    <th class="num">24h</th><th class="num hide-s">Tokens</th>
+    <th class="num hide-s">Mcap</th></tr></thead>
+  <tbody>
+  <tr><td class="sym">Brainrot</td>
+    <td class="num">-3%</td>
+    <td class="num">+11%</td>
+    <td class="num">+20%</td>
+    <td class="num hide-s">25</td>
+    <td class="num hide-s">$16.0M</td></tr>
+  <tr><td class="sym">Celebrity</td>
+    <td class="num">-1%</td>
+    <td class="num">+7%</td>
+    <td class="num">+10%</td>
+    <td class="num hide-s">6</td>
+    <td class="num hide-s">$956.8M</td></tr>
+  <tr><td class="sym">TikTok</td>
+    <td class="num">-3%</td>
+    <td class="num">+7%</td>
+    <td class="num">+17%</td>
+    <td class="num hide-s">47</td>
+    <td class="num hide-s">$24.3M</td></tr>
+  <tr><td class="sym">Internet Animals</td>
+    <td class="num">-2%</td>
+    <td class="num">+5%</td>
+    <td class="num">+8%</td>
+    <td class="num hide-s">43</td>
+    <td class="num hide-s">$121.5M</td></tr>
+  <tr><td class="sym">x402</td>
+    <td class="num">+0%</td>
+    <td class="num">+5%</td>
+    <td class="num">+9%</td>
+    <td class="num hide-s">17</td>
+    <td class="num hide-s">$143.3M</td></tr>
+  <tr><td class="sym">Knockoff Legends</td>
+    <td class="num">-0%</td>
+    <td class="num">+4%</td>
+    <td class="num">+10%</td>
+    <td class="num hide-s">37</td>
+    <td class="num hide-s">$5.9M</td></tr>
+  <tr><td class="sym">Dog</td>
+    <td class="num">-0%</td>
+    <td class="num">+3%</td>
+    <td class="num">+9%</td>
+    <td class="num hide-s">65</td>
+    <td class="num hide-s">$1.0B</td></tr>
+  <tr><td class="sym">Cat</td>
+    <td class="num">-0%</td>
+    <td class="num">+3%</td>
+    <td class="num">+8%</td>
+    <td class="num hide-s">93</td>
+    <td class="num hide-s">$764.3M</td></tr>
+  <tr><td class="sym">Meme Hall of Fame</td>
+    <td class="num">-0%</td>
+    <td class="num">+2%</td>
+    <td class="num">+9%</td>
+    <td class="num hide-s">59</td>
+    <td class="num hide-s">$5.2B</td></tr>
+  <tr><td class="sym">NFT</td>
+    <td class="num">-0%</td>
+    <td class="num">+2%</td>
+    <td class="num">+9%</td>
+    <td class="num hide-s">9</td>
+    <td class="num hide-s">$849.0M</td></tr>
+  <tr><td class="sym">Degen</td>
+    <td class="num">+0%</td>
+    <td class="num">+1%</td>
+    <td class="num">+10%</td>
+    <td class="num hide-s">25</td>
+    <td class="num hide-s">$962.0M</td></tr>
+  <tr><td class="sym">Slang</td>
+    <td class="num">-1%</td>
+    <td class="num">+1%</td>
+    <td class="num">+5%</td>
+    <td class="num hide-s">10</td>
+    <td class="num hide-s">$47.4M</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Cut — and why</h2>
+<p class="note">Tokens climbing on the charts that the filter refuses.
+   Often the best thing to post: nobody else shows this.</p>
+<div class="card">
+<table>
+  <thead><tr><th>Token</th><th class="num">24h</th><th class="num">Volume</th>
+    <th class="num hide-s">Fake vol.</th><th class="num hide-s">Risk</th>
+    <th>Reason</th></tr></thead>
+  <tbody>
+  <tr><td class="sym">$DOGGYSTYLE</td>
+    <td class="num">+73%</td>
+    <td class="num">$15.7M</td>
+    <td class="num hide-s">30</td>
+    <td class="num hide-s">35</td>
+    <td style="color: var(--ink-2)">market cap too small</td></tr>
+  <tr><td class="sym">$Huhcat</td>
+    <td class="num">+429%</td>
+    <td class="num">$4.5M</td>
+    <td class="num hide-s">40</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">pair younger than 3h</td></tr>
+  <tr><td class="sym">$LEEK</td>
+    <td class="num">+73%</td>
+    <td class="num">$2.5M</td>
+    <td class="num hide-s">30</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">liquidity < $25,000</td></tr>
+  <tr><td class="sym">$Fartcoin </td>
+    <td class="num">+10%</td>
+    <td class="num">$2.4M</td>
+    <td class="num hide-s">0</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">no meaningful move</td></tr>
+  <tr><td class="sym">$ERIZO</td>
+    <td class="num">+120%</td>
+    <td class="num">$1.5M</td>
+    <td class="num hide-s">25</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">pair younger than 3h</td></tr>
+  <tr><td class="sym">$MFONE</td>
+    <td class="num">+565%</td>
+    <td class="num">$1.1M</td>
+    <td class="num hide-s">0</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">pair younger than 3h</td></tr>
+  <tr><td class="sym">$CANSEM</td>
+    <td class="num">+266%</td>
+    <td class="num">$595.7k</td>
+    <td class="num hide-s">0</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">pair younger than 3h</td></tr>
+  <tr><td class="sym">$$21</td>
+    <td class="num">+965%</td>
+    <td class="num">$496.9k</td>
+    <td class="num hide-s">10</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">market cap too small</td></tr>
+  <tr><td class="sym">$ALOKA</td>
+    <td class="num">+915%</td>
+    <td class="num">$419.3k</td>
+    <td class="num hide-s">10</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">pair younger than 3h</td></tr>
+  <tr><td class="sym">$kall</td>
+    <td class="num">+228%</td>
+    <td class="num">$384.2k</td>
+    <td class="num hide-s">10</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">pair younger than 3h</td></tr>
+  <tr><td class="sym">$PISTACAT</td>
+    <td class="num">+15%</td>
+    <td class="num">$365.5k</td>
+    <td class="num hide-s">10</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">liquidity < $25,000</td></tr>
+  <tr><td class="sym">$GTA 6 Coin</td>
+    <td class="num">+12%</td>
+    <td class="num">$278.6k</td>
+    <td class="num hide-s">0</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">no meaningful move</td></tr>
+  <tr><td class="sym">$ZAYTOUNA</td>
+    <td class="num">+82%</td>
+    <td class="num">$211.7k</td>
+    <td class="num hide-s">0</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">liquidity < $25,000</td></tr>
+  <tr><td class="sym">$Z</td>
+    <td class="num">+11%</td>
+    <td class="num">$204.6k</td>
+    <td class="num hide-s">15</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">no meaningful move</td></tr>
+  <tr><td class="sym">$VI</td>
+    <td class="num">+12%</td>
+    <td class="num">$195.9k</td>
+    <td class="num hide-s">0</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">liquidity < $25,000</td></tr>
+  <tr><td class="sym">$AFD</td>
+    <td class="num">+135%</td>
+    <td class="num">$110.6k</td>
+    <td class="num hide-s">0</td>
+    <td class="num hide-s">0</td>
+    <td style="color: var(--ink-2)">pair younger than 3h</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Post drafts</h2>
+<p class="note">Generated from the numbers above. Rewrite them in your own voice —
+   a thread that reads like a bot does not build followers.</p>
+<div class="thread-t">Today's ranking</div>
+<pre class="thread">Solana runners — Aug 27
+
+1. $PENSION · +766% · vol $128.7k · liq $62.9k
+2. $cat · +377% · vol $1.1M · liq $42.8k
+3. $ANTSEM · +773% · vol $2.5M · liq $56.5k
+4. $fone · +25,620% · vol $37.6M · liq $431.8k
+5. $CALL · +372% · vol $779.3k · liq $46.3k
+
+Out of 126 tokens scanned, 16 were cut for manufactured volume or structural risk.
+
+Method in the replies ↓</pre>
+<div class="thread-t">The narrative</div>
+<pre class="thread">Today's narrative: unclassified.
+
+6 tokens from that cluster made my runners, $11.7M combined volume, median +324%.
+
+Tickers: $PENSION $CALL $TOADS $GTA6 $aura $Jimothy
+
+What's forming behind it: Brainrot (new, +11% on 6h).</pre>
+<div class="thread-t">Today's traps</div>
+<pre class="thread">Charts that look like they're sending, and why I'm not touching them:
+
+$DOGGYSTYLE — +73%, vol $15.7M → market cap too small
+$Huhcat — +429%, vol $4.5M → pair younger than 3h
+$LEEK — +73%, vol $2.5M → liquidity < $25,000
+$Fartcoin  — +10%, vol $2.4M → no meaningful move
+
+Volume is cheap to fake. Liquidity depth and holder structure are not.</pre>
+
+
+<footer>
+  Generated automatically on Thursday, August 27, 2026 at 20:08 CET.
+  Sources: Dexscreener, GeckoTerminal, RugCheck.
+  37 tokens analysed in depth.<br><br>
+  This is a market-data analysis tool, not investment advice. The filters reduce
+  exposure to the most common frauds, they do not remove it: a token can clear
+  every check and still collapse. Do not base any decision on this report alone.
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "weights": {
+    "momentum": 0.3,
+    "volume": 0.25,
+    "liquidity": 0.15,
+    "social": 0.1,
+    "freshness": 0.2
+  },
+  "observations": [],
+  "runs": 1,
+  "calibrated": false,
+  "sample_size": 0,
+  "stats": {
+    "n": 0
+  },
+  "updated_at": "2026-08-27T18:08:32.500322+00:00"
+}
