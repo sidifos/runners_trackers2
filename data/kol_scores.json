@@ -5,18 +5,18 @@
    "mint": "AVBN6kXdaw27ySuvMevKYzNTL8d39b7sGQFDCmsvpump",
    "entry_mcap": 601175.0,
    "entry_ts": 1787920972.503041,
-   "peak_mcap": 678117.0,
-   "last_mcap": 678117.0,
-   "last_ts": 1787920972.579103
+   "peak_mcap": 4210217.0,
+   "last_mcap": 4210217.0,
+   "last_ts": 1787954006.437163
   },
   "Zrool|CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump": {
    "kol": "Zrool",
    "mint": "CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump",
    "entry_mcap": 155452.0,
    "entry_ts": 1787920972.503052,
-   "peak_mcap": 155452.0,
-   "last_mcap": 141930.0,
-   "last_ts": 1787920972.579109
+   "peak_mcap": 164944.0,
+   "last_mcap": 164944.0,
+   "last_ts": 1787954006.437172
   },
   "MoneyMaykah|85bq8HiHFs9czQNXRsDLCVuyshXtVjERW8jDn958pump": {
    "kol": "MoneyMaykah",
@@ -24,8 +24,8 @@
    "entry_mcap": 133575.0,
    "entry_ts": 1787920972.503058,
    "peak_mcap": 144926.0,
-   "last_mcap": 144926.0,
-   "last_ts": 1787920972.579111
+   "last_mcap": 121734.0,
+   "last_ts": 1787954006.437174
   },
   "Smokez|BRZ5aeJCDuruA42V1CntqKvofa2G7DS3yyxx1pZEpump": {
    "kol": "Smokez",
@@ -33,8 +33,8 @@
    "entry_mcap": 233270.0,
    "entry_ts": 1787920972.50306,
    "peak_mcap": 239312.0,
-   "last_mcap": 239312.0,
-   "last_ts": 1787920972.579112
+   "last_mcap": 229182.0,
+   "last_ts": 1787954006.437176
   },
   "Felix|7hyY1MeAq1nhhr4dRXB613jSwD9o85pjEFr2aMq2pump": {
    "kol": "Felix",
@@ -42,8 +42,8 @@
    "entry_mcap": 468746.0,
    "entry_ts": 1787920972.503064,
    "peak_mcap": 468746.0,
-   "last_mcap": 247702.0,
-   "last_ts": 1787920972.579112
+   "last_mcap": 27506.0,
+   "last_ts": 1787954006.437177
   },
   "LeykoFR|4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz": {
    "kol": "LeykoFR",
@@ -51,18 +51,36 @@
    "entry_mcap": 1624554.0,
    "entry_ts": 1787920972.503071,
    "peak_mcap": 1624554.0,
-   "last_mcap": 1624554.0,
-   "last_ts": 1787920972.579113
+   "last_mcap": 1111122.0,
+   "last_ts": 1787954006.437178
+  },
+  "Cooker|CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump": {
+   "kol": "Cooker",
+   "mint": "CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump",
+   "entry_mcap": 170635.0,
+   "entry_ts": 1787954006.277059,
+   "peak_mcap": 170635.0,
+   "last_mcap": 164944.0,
+   "last_ts": 1787954006.437179
+  },
+  "Witloof|5BLGf66aP5GffuDwYkza79FpiWQ9tX7LiNGU1gohpump": {
+   "kol": "Witloof",
+   "mint": "5BLGf66aP5GffuDwYkza79FpiWQ9tX7LiNGU1gohpump",
+   "entry_mcap": 394299.0,
+   "entry_ts": 1787954006.277079,
+   "peak_mcap": 394299.0,
+   "last_mcap": 364934.0,
+   "last_ts": 1787954006.43718
   }
  },
  "scores": {
   "Dior": {
    "calls": 1,
-   "early_alpha_2x": 0.0,
-   "early_alpha_3x": 0.0,
-   "early_alpha_5x": 0.0,
+   "early_alpha_2x": 100.0,
+   "early_alpha_3x": 100.0,
+   "early_alpha_5x": 100.0,
    "early_alpha_10x": 0.0,
-   "median_multiple": 1.13,
+   "median_multiple": 7.0,
    "median_entry_mcap": 601175,
    "still_up_rate": 100.0,
    "dead_rate": 0.0,
@@ -74,9 +92,9 @@
    "early_alpha_3x": 0.0,
    "early_alpha_5x": 0.0,
    "early_alpha_10x": 0.0,
-   "median_multiple": 1.0,
+   "median_multiple": 1.06,
    "median_entry_mcap": 155452,
-   "still_up_rate": 0.0,
+   "still_up_rate": 100.0,
    "dead_rate": 0.0,
    "measured": false
   },
@@ -88,7 +106,7 @@
    "early_alpha_10x": 0.0,
    "median_multiple": 1.08,
    "median_entry_mcap": 133575,
-   "still_up_rate": 100.0,
+   "still_up_rate": 0.0,
    "dead_rate": 0.0,
    "measured": false
   },
@@ -100,7 +118,7 @@
    "early_alpha_10x": 0.0,
    "median_multiple": 1.03,
    "median_entry_mcap": 233270,
-   "still_up_rate": 100.0,
+   "still_up_rate": 0.0,
    "dead_rate": 0.0,
    "measured": false
   },
@@ -113,7 +131,7 @@
    "median_multiple": 1.0,
    "median_entry_mcap": 468746,
    "still_up_rate": 0.0,
-   "dead_rate": 0.0,
+   "dead_rate": 100.0,
    "measured": false
   },
   "LeykoFR": {
@@ -124,12 +142,36 @@
    "early_alpha_10x": 0.0,
    "median_multiple": 1.0,
    "median_entry_mcap": 1624554,
-   "still_up_rate": 100.0,
+   "still_up_rate": 0.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "Cooker": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.0,
+   "median_entry_mcap": 170635,
+   "still_up_rate": 0.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "Witloof": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.0,
+   "median_entry_mcap": 394299,
+   "still_up_rate": 0.0,
    "dead_rate": 0.0,
    "measured": false
   }
  },
- "updated_at": "2026-08-28T12:42:52.579183+00:00",
+ "updated_at": "2026-08-28T21:53:26.437261+00:00",
  "ranking": [
   {
    "kol": "Cented",
@@ -433,7 +475,7 @@
    "seed_tier": "A",
    "value": 62.0,
    "basis": "reputation prior",
-   "calls": 0
+   "calls": 1
   },
   {
    "kol": "Rookiexbt",
@@ -785,7 +827,7 @@
    "seed_tier": "C",
    "value": 30.0,
    "basis": "reputation prior",
-   "calls": 0
+   "calls": 1
   },
   {
    "kol": "Owen",
