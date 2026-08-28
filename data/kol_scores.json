@@ -1,0 +1,935 @@
+{
+ "trades": {
+  "Dior|AVBN6kXdaw27ySuvMevKYzNTL8d39b7sGQFDCmsvpump": {
+   "kol": "Dior",
+   "mint": "AVBN6kXdaw27ySuvMevKYzNTL8d39b7sGQFDCmsvpump",
+   "entry_mcap": 601175.0,
+   "entry_ts": 1787920972.503041,
+   "peak_mcap": 678117.0,
+   "last_mcap": 678117.0,
+   "last_ts": 1787920972.579103
+  },
+  "Zrool|CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump": {
+   "kol": "Zrool",
+   "mint": "CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump",
+   "entry_mcap": 155452.0,
+   "entry_ts": 1787920972.503052,
+   "peak_mcap": 155452.0,
+   "last_mcap": 141930.0,
+   "last_ts": 1787920972.579109
+  },
+  "MoneyMaykah|85bq8HiHFs9czQNXRsDLCVuyshXtVjERW8jDn958pump": {
+   "kol": "MoneyMaykah",
+   "mint": "85bq8HiHFs9czQNXRsDLCVuyshXtVjERW8jDn958pump",
+   "entry_mcap": 133575.0,
+   "entry_ts": 1787920972.503058,
+   "peak_mcap": 144926.0,
+   "last_mcap": 144926.0,
+   "last_ts": 1787920972.579111
+  },
+  "Smokez|BRZ5aeJCDuruA42V1CntqKvofa2G7DS3yyxx1pZEpump": {
+   "kol": "Smokez",
+   "mint": "BRZ5aeJCDuruA42V1CntqKvofa2G7DS3yyxx1pZEpump",
+   "entry_mcap": 233270.0,
+   "entry_ts": 1787920972.50306,
+   "peak_mcap": 239312.0,
+   "last_mcap": 239312.0,
+   "last_ts": 1787920972.579112
+  },
+  "Felix|7hyY1MeAq1nhhr4dRXB613jSwD9o85pjEFr2aMq2pump": {
+   "kol": "Felix",
+   "mint": "7hyY1MeAq1nhhr4dRXB613jSwD9o85pjEFr2aMq2pump",
+   "entry_mcap": 468746.0,
+   "entry_ts": 1787920972.503064,
+   "peak_mcap": 468746.0,
+   "last_mcap": 247702.0,
+   "last_ts": 1787920972.579112
+  },
+  "LeykoFR|4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz": {
+   "kol": "LeykoFR",
+   "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+   "entry_mcap": 1624554.0,
+   "entry_ts": 1787920972.503071,
+   "peak_mcap": 1624554.0,
+   "last_mcap": 1624554.0,
+   "last_ts": 1787920972.579113
+  }
+ },
+ "scores": {
+  "Dior": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.13,
+   "median_entry_mcap": 601175,
+   "still_up_rate": 100.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "Zrool": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.0,
+   "median_entry_mcap": 155452,
+   "still_up_rate": 0.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "MoneyMaykah": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.08,
+   "median_entry_mcap": 133575,
+   "still_up_rate": 100.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "Smokez": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.03,
+   "median_entry_mcap": 233270,
+   "still_up_rate": 100.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "Felix": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.0,
+   "median_entry_mcap": 468746,
+   "still_up_rate": 0.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "LeykoFR": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.0,
+   "median_entry_mcap": 1624554,
+   "still_up_rate": 100.0,
+   "dead_rate": 0.0,
+   "measured": false
+  }
+ },
+ "updated_at": "2026-08-28T12:42:52.579183+00:00",
+ "ranking": [
+  {
+   "kol": "Cented",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Euris",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Orangie",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Cupsey",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Ansem",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Waddles",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Kadenox",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Frank",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Jijo",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Mitch",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Loopier",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Absol",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 80.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Trey",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Dior",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 1
+  },
+  {
+   "kol": "Leens",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Gake",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Pow",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Assassin",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Zrool",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 1
+  },
+  {
+   "kol": "Kev",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Theo",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Dust",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Yolo",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Ethan",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Oscar",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Tere",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Weaver",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Monki",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Bandit",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Kreo",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Scharo",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Al4n",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Hesi",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Nyhrox",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "MoneyMaykah",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 1
+  },
+  {
+   "kol": "OGAntD",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Solcrow",
+   "tier": "A",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Cooker",
+   "tier": "B",
+   "seed_tier": "A",
+   "value": 62.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Rookiexbt",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Smokez",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 1
+  },
+  {
+   "kol": "Domy",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Henn",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Felix",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 1
+  },
+  {
+   "kol": "Cloux",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Trax",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Villain",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Keanu",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Shadow",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Uber",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Casino",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Marcell",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Mark",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "JackDuval",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Rayan",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Gasp",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Lowkey",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Ghostee",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Betman",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Dvces",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Otta",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Spuno",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Porta",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Emma",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "WaiterG",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Realist",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Adam",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Putrick",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Flames",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "KryptoKing",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Bronskee",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Ferb",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Yugi",
+   "tier": "B",
+   "seed_tier": "B",
+   "value": 45.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "LatucheFR",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "LeykoFR",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 1
+  },
+  {
+   "kol": "Soloxbt",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Solxbt",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Tristi",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Qtdegen",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Zenko",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Polar",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Argan",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Witloof",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Owen",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Rev",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Theonomix",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Lupeer",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Danny",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Jalen",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Beepus",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Alex",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Sabby",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Blossom",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Carlos",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Giann",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Zef",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Youniz",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Ozark",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Bastille",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Chefin",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  },
+  {
+   "kol": "Tim",
+   "tier": "C",
+   "seed_tier": "C",
+   "value": 30.0,
+   "basis": "reputation prior",
+   "calls": 0
+  }
+ ]
+}
