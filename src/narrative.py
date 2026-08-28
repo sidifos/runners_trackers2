@@ -168,19 +168,103 @@ def snapshot(metas: list[dict], history_dir: str | Path) -> None:
     )
 
 
-def build(tokens: list, history_dir: str | Path) -> dict:
+def _edit_distance(a: str, b: str) -> int:
+    if abs(len(a) - len(b)) > 3:
+        return 99
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1,
+                           prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+
+def _kin(a: str, b: str) -> bool:
+    """Is one ticker a knockoff of the other.
+
+    Deliberately tight: one character apart on short tickers ($kall/$CALL), two
+    on longer ones ($ANSEM/$ANTSEM/$CANSEM). Loosen it and $neet starts
+    clustering with $MEAT, which is how a signal turns into a horoscope.
+    """
+    if len(a) < 4 or len(b) < 4:
+        return False
+    limit = 1 if min(len(a), len(b)) <= 5 else 2
+    return _edit_distance(a, b) <= limit
+
+
+def knockoff_clusters(tokens: list, min_size: int = 3) -> list[dict]:
+    """Families of near-identical tickers across the whole scan.
+
+    The most reliable attention signal on Solana, and the one a filter that
+    judges tokens one at a time cannot see. When a name runs the copies land
+    within the hour: $ANSEM moves, and $ANTSEM, $CANSEM, $BANSEM are deployed
+    before the original has topped. Each copy alone is garbage — thin, sniped,
+    correctly rejected. Three at once is the market announcing where attention
+    went, which is why Dexscreener ranks "Knockoff Legends" as a meta of its own.
+
+    So this runs over everything scanned, not over the survivors. The point is
+    that the cluster lives in the pile the filters threw away: a run that
+    publishes zero runners can still say what the day was about.
+    """
+    items = [(re.sub(r"[^a-z0-9]", "", (t.symbol or "").lower()), t)
+             for t in tokens]
+    items = [(s, t) for s, t in items if len(s) >= 4]
+
+    families: list[list] = []
+    for sym, tok in items:
+        for fam in families:
+            if any(_kin(sym, s) for s, _ in fam):
+                fam.append((sym, tok))
+                break
+        else:
+            families.append([(sym, tok)])
+
+    out = []
+    for fam in families:
+        uniq = {s: t for s, t in fam}
+        if len(uniq) < min_size:
+            continue
+        members = list(uniq.values())
+        # The original is the one that already existed when the copies launched.
+        members.sort(key=lambda t: -getattr(t, "age_hours", 0))
+        origin = members[0]
+        out.append({
+            "origin": origin.symbol,
+            "members": [t.symbol for t in members],
+            "count": len(members),
+            "combined_volume": sum(getattr(t, "vol_h24", 0) for t in members),
+            "origin_change": round(getattr(origin, "chg_h24", 0), 1),
+            "fresh_copies": sum(1 for t in members[1:]
+                                if getattr(t, "age_hours", 99) <= 24),
+        })
+    out.sort(key=lambda c: -c["combined_volume"])
+    return out[:4]
+
+
+def build(tokens: list, history_dir: str | Path,
+          scanned: list | None = None) -> dict:
     metas = fetch_metas()
     result = {
         "metas": metas[:12],
         "emerging": emerging(metas, history_dir),
+        "knockoffs": knockoff_clusters(scanned if scanned is not None else tokens),
         **cluster_runners(tokens),
     }
     snapshot(metas, history_dir)
 
     lead = result["themes"][0] if result["themes"] else None
-    result["headline"] = (
-        f"{lead['theme']} leads with {lead['count']} runners "
-        f"and ${lead['total_volume']:,.0f} in volume"
-        if lead else "no dominant theme today"
-    )
+    if lead:
+        result["headline"] = (
+            f"{lead['theme']} leads with {lead['count']} runners "
+            f"and ${lead['total_volume']:,.0f} in volume")
+    elif result["knockoffs"]:
+        # Nothing survived the filters, but the copies still name the day.
+        k = result["knockoffs"][0]
+        result["headline"] = (
+            f"${k['origin']} is the name being copied — {k['count'] - 1} "
+            f"knockoff(s) in today's scan, none of them worth touching")
+    else:
+        result["headline"] = "no dominant theme today"
     return result

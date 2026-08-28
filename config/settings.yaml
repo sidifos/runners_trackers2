@@ -8,6 +8,9 @@
 min_liquidity_usd: 25000      # below this you cannot exit without breaking price
 min_volume_usd: 100000        # minimum 24h volume
 min_mcap_usd: 80000
+max_mcap_usd: 120000000       # a ceiling is as much part of "runner" as a floor:
+                              # $FARTCOIN or $TROLL at +10% is a major re-rating,
+                              # not a call anyone can post. 0 disables it.
 min_age_hours: 3              # gives instant rugs time to reveal themselves
 min_txns: 250                 # 24h transaction count
 min_change_pct: 15            # a "runner" has to have moved

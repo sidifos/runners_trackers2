@@ -96,11 +96,18 @@ def enrich(mints: list[str], meta: dict[str, dict],
     for t in tokens:
         t.description = meta.get(t.mint, {}).get("description", "")
 
+    # The ceiling is as much a part of the definition as the floor. $FARTCOIN at
+    # +10% is a major re-rating, not a runner: nobody follows a Solana tracker to
+    # be told a $2B coin moved a tenth. Letting them into the scan burns API
+    # calls and, worse, fills the published cut list with names that were never
+    # candidates — which reads as a tracker that does not know what it is for.
+    ceiling = cfg.get("max_mcap_usd") or 0
     pre = [
         t for t in tokens
         if t.liquidity >= cfg["min_liquidity_usd"] * 0.7
         and t.vol_h24 >= cfg["min_volume_usd"] * 0.7
         and t.chg_h24 >= cfg["min_change_pct"] * 0.6
+        and (not ceiling or t.mcap <= ceiling)
     ]
     log.info("  %d tokens clear the pre-filter", len(pre))
 
@@ -130,6 +137,23 @@ def holder_pass(tokens: list, cfg: dict) -> dict:
         t.holders = p.as_dict()
     flagged = sum(1 for p in profiles if p.insider_pct >= cfg["insider_needs_kol_pct"])
     log.info("  %d token(s) carry elevated insider supply", flagged)
+
+    # Bundled launches and sniper clusters are the dominant scam shape on Solana
+    # right now. A batch of memecoins that returns *zero* insider supply and zero
+    # bundles is not a clean batch, it is a dead signal — RugCheck not answering,
+    # a renamed field, a launchpad it does not cover yet. Silence has to be
+    # audible, otherwise the report prints an empty insider column and the reader
+    # takes it for an all-clear.
+    live = [p for p in profiles if p.available]
+    signal_live = any(p.insider_pct > 0 or p.bundled for p in live)
+    if len(live) >= 8 and not signal_live:
+        log.warning("insider detection returned nothing across %d tokens — "
+                    "treat the insider column as unavailable, not as clean",
+                    len(live))
+    unreadable = sum(1 for p in live if not p.reliable)
+    if unreadable:
+        log.warning("%d holder report(s) unreadable — concentration not judged "
+                    "for those tokens", unreadable)
     return out
 
 
@@ -252,7 +276,10 @@ def main() -> int:
             log.warning("research pass degraded: %s", e)
 
     # 7. Narrative layer.
-    narr = narrative.build(runners, HISTORY)
+    narr = narrative.build(runners, HISTORY, scanned=tokens)
+    for k in narr.get("knockoffs", []):
+        log.info("knockoff wave: $%s copied by %s", k["origin"],
+                 ", ".join("$" + m for m in k["members"][1:]))
     try:
         narr["daily"] = synthesis.daily_narrative(
             evidence, analyses, narr.get("metas", []), lessons)
@@ -294,6 +321,12 @@ def main() -> int:
             "wallets_tracked": len(wallets),
             "llm_active": bool(synthesis.api_key() and cfg.get("llm_synthesis")),
             "researched": len(evidence),
+            # An empty insider column has to say which kind of empty it is.
+            "insider_signal": bool(
+                any(p.insider_pct > 0 or p.bundled for p in profiles.values())
+                or len([p for p in profiles.values() if p.available]) < 8),
+            "holders_unreadable": sum(
+                1 for p in profiles.values() if p.available and not p.reliable),
         },
         "calibration": state,
     }

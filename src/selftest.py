@@ -204,6 +204,35 @@ def main() -> int:
     check("no duplicate emergence on second pass",
           all(e["status"] != "new" for e in narr2["emerging"]) or True)
 
+    # The real ticker list from the 27 Aug run, which the tracker read as
+    # 29 unrelated tokens and one quiet market.
+    def tick(sym, age, vol=1_000_000):
+        t = filters.Token(mint=sym, symbol=sym, name=sym)
+        t.created_at = (time.time() - age * 3600) * 1000
+        t.vol_h24, t.chg_h24 = vol, 10.0
+        return t
+
+    scan = [tick(s, a) for s, a in [
+        ("ANSEM", 900), ("ANTSEM", 6), ("CANSEM", 4), ("CALL", 300),
+        ("kall", 5), ("MEAT", 40), ("neet", 50), ("PANTS", 20),
+        ("TOADS", 30), ("STONK", 60), ("GATO", 70)]]
+    waves = narrative.knockoff_clusters(scan)
+    check("the ANSEM knockoff wave is detected",
+          any(w["origin"] == "ANSEM" and w["count"] == 3 for w in waves),
+          str([(w["origin"], w["members"]) for w in waves]))
+    check("the original is named, not a copy",
+          all(w["origin"] in ("ANSEM", "CALL") for w in waves),
+          str([w["origin"] for w in waves]))
+    check("$neet and $MEAT are not a wave",
+          not any("MEAT" in w["members"] and "neet" in w["members"] for w in waves))
+    check("$PANTS does not join the ANSEM family",
+          not any("PANTS" in w["members"] for w in waves))
+    check("a two-token pair is not called a wave",
+          not any(w["count"] < 3 for w in waves))
+    check("a day with no survivors still gets a headline",
+          "ANSEM" in narrative.build([], tmp, scanned=scan)["headline"],
+          narrative.build([], tmp, scanned=scan)["headline"])
+
     print("\n8. Calibration")
     learn.record_picks(ranked, tmp, "selftest")
     check("selections archived", any(tmp.glob("picks_*.json")))

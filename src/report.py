@@ -129,6 +129,22 @@ def build_threads(payload: dict) -> list[dict]:
         threads.append({"title": "The narrative",
                         "body": "\n".join(lines).strip()})
 
+    # The knockoff wave is the one post that works on a day when nothing passed
+    # the filters — and the one nobody else writes, because everyone is looking
+    # at the tokens that survived instead of the pile that did not.
+    for k in (narr.get("knockoffs") or [])[:1]:
+        copies = ", ".join("$" + m for m in k["members"][1:])
+        lines = [
+            f"${k['origin']} is the name everyone is copying today.", "",
+            f"{k['count'] - 1} knockoffs in the scan: {copies}",
+            f"Combined volume: {fmt_usd(k['combined_volume'])}", "",
+            "I'm not calling any of them — thin, sniped, and the copy never "
+            "outlives the original.",
+            "But you don't get this many clones of a ticker nobody is watching. "
+            "That's where the attention is.",
+        ]
+        threads.append({"title": "The knockoff wave", "body": "\n".join(lines)})
+
     if payload.get("rejected"):
         lines = ["Charts that look like they're sending, and why I'm not touching them:", ""]
         for r in payload["rejected"][:4]:

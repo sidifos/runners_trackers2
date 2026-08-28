@@ -27,13 +27,31 @@ from sources import RC, _get
 
 log = logging.getLogger("insiders")
 
-# Addresses that legitimately hold large balances and must never count as
-# concentration: burn address, system program, known program-owned accounts.
+# Addresses and programs that hold supply for structural reasons and must never
+# read as concentration.
+#
+# This list is the fallback, not the mechanism. Solana ships a new launchpad
+# every few months — pump.fun tokens no longer graduate to Raydium, they
+# graduate to PumpSwap; Meteora DBC, Bags, Believe and Moonshot all park supply
+# in vaults of their own. Any hard-coded venue list is out of date the quarter
+# after it is written, which is why the pools are read from the report itself
+# (see _structural_accounts) and this set only catches what the report misses.
 BENIGN_OWNERS = {
-    "11111111111111111111111111111111",
-    "1nc1nerator11111111111111111111111111111111",
-    "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",  # Raydium authority
+    "11111111111111111111111111111111",              # system program
+    "1nc1nerator11111111111111111111111111111111",   # burn address
+    "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",  # Raydium AMM V4 authority
     "GThUX1Atko4tqhN2NaiTazWSeFWMuiUvfFnyJyUghFMJ",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",   # pump.fun bonding curve
+    "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",   # PumpSwap AMM
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",  # Raydium AMM V4
+    "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",  # Raydium CPMM
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",  # Raydium CLMM
+    "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",   # Meteora DLMM
+    "Eo7WjKq67rjJQSZxS6z3YkapzY3eMj6Xy8X5EQVn5UaB",  # Meteora Dynamic AMM
+    "dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN",   # Meteora DBC
+    "24Uqj9JCLxUeoC3hGfh5W3s9FM9uCHDS2SG3LYwBpyTi",  # Meteora vault
+    "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",   # Orca Whirlpool
+    "MoonCVVNZFSYkqNXP6bxHLPL6QQJiMagDL3qcqUQTrG",   # Moonshot
 }
 
 # knownAccounts types that hold supply for structural reasons rather than as a

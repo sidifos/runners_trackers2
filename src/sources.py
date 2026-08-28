@@ -48,12 +48,25 @@ class RateLimiter:
             self._next = now + self.interval
 
 
+# Wallet history runs on Helius's Enhanced Transactions API, which is rate
+# limited far more tightly than plain RPC: 2 req/s on the free plan, against
+# 10 req/s for RPC calls. Pacing the tracker at the RPC limit means a wall of
+# 429s and wallet history that quietly comes back half empty — the confluence
+# looks switched on and is not. Default to what the free plan actually allows;
+# raise HELIUS_RPS once you are on a paid plan.
+def _helius_rps() -> float:
+    try:
+        return max(float(os.environ.get("HELIUS_RPS", "2")), 0.2)
+    except ValueError:
+        return 2.0
+
+
 _limits = {
     "ds": RateLimiter(55),       # docs: 60/min across all endpoints
     "gt": RateLimiter(28),       # docs: 30/min keyless
     "rc": RateLimiter(55),
     "pf": RateLimiter(60),       # pump.fun public frontend API
-    "helius": RateLimiter(540),  # 10 req/s on the Developer plan
+    "helius": RateLimiter(int(_helius_rps() * 60)),
 }
 
 _session = requests.Session()
