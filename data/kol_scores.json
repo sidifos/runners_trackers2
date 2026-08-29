@@ -6,8 +6,8 @@
    "entry_mcap": 601175.0,
    "entry_ts": 1787920972.503041,
    "peak_mcap": 5137676.0,
-   "last_mcap": 5137676.0,
-   "last_ts": 1787954312.440714
+   "last_mcap": 2245953.0,
+   "last_ts": 1787983675.321206
   },
   "Zrool|CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump": {
    "kol": "Zrool",
@@ -15,17 +15,17 @@
    "entry_mcap": 155452.0,
    "entry_ts": 1787920972.503052,
    "peak_mcap": 166621.0,
-   "last_mcap": 166621.0,
-   "last_ts": 1787954312.440718
+   "last_mcap": 78841.0,
+   "last_ts": 1787983675.321212
   },
   "MoneyMaykah|85bq8HiHFs9czQNXRsDLCVuyshXtVjERW8jDn958pump": {
    "kol": "MoneyMaykah",
    "mint": "85bq8HiHFs9czQNXRsDLCVuyshXtVjERW8jDn958pump",
    "entry_mcap": 133575.0,
    "entry_ts": 1787920972.503058,
-   "peak_mcap": 144926.0,
-   "last_mcap": 113474.0,
-   "last_ts": 1787954312.440719
+   "peak_mcap": 173620.0,
+   "last_mcap": 173620.0,
+   "last_ts": 1787983675.321214
   },
   "Smokez|BRZ5aeJCDuruA42V1CntqKvofa2G7DS3yyxx1pZEpump": {
    "kol": "Smokez",
@@ -33,8 +33,8 @@
    "entry_mcap": 233270.0,
    "entry_ts": 1787920972.50306,
    "peak_mcap": 239312.0,
-   "last_mcap": 208596.0,
-   "last_ts": 1787954312.44072
+   "last_mcap": 64510.0,
+   "last_ts": 1787983675.321216
   },
   "Felix|7hyY1MeAq1nhhr4dRXB613jSwD9o85pjEFr2aMq2pump": {
    "kol": "Felix",
@@ -42,8 +42,8 @@
    "entry_mcap": 468746.0,
    "entry_ts": 1787920972.503064,
    "peak_mcap": 468746.0,
-   "last_mcap": 27665.0,
-   "last_ts": 1787954312.440721
+   "last_mcap": 31916.0,
+   "last_ts": 1787983675.321217
   },
   "LeykoFR|4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz": {
    "kol": "LeykoFR",
@@ -51,8 +51,8 @@
    "entry_mcap": 1624554.0,
    "entry_ts": 1787920972.503071,
    "peak_mcap": 1624554.0,
-   "last_mcap": 1143098.0,
-   "last_ts": 1787954312.440723
+   "last_mcap": 939139.0,
+   "last_ts": 1787983675.321218
   },
   "Cooker|CRJDgvxzZKCmCKbe7RjBkBWEhAneLFpncWAGuUrwpump": {
    "kol": "Cooker",
@@ -60,8 +60,8 @@
    "entry_mcap": 170635.0,
    "entry_ts": 1787954006.277059,
    "peak_mcap": 170635.0,
-   "last_mcap": 166621.0,
-   "last_ts": 1787954312.440723
+   "last_mcap": 78841.0,
+   "last_ts": 1787983675.321219
   },
   "Witloof|5BLGf66aP5GffuDwYkza79FpiWQ9tX7LiNGU1gohpump": {
    "kol": "Witloof",
@@ -69,8 +69,8 @@
    "entry_mcap": 394299.0,
    "entry_ts": 1787954006.277079,
    "peak_mcap": 394299.0,
-   "last_mcap": 214344.0,
-   "last_ts": 1787954312.440724
+   "last_mcap": 6737.0,
+   "last_ts": 1787983675.32122
   },
   "LeykoFR|MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump": {
    "kol": "LeykoFR",
@@ -78,8 +78,80 @@
    "entry_mcap": 667226.0,
    "entry_ts": 1787954312.363313,
    "peak_mcap": 667226.0,
-   "last_mcap": 660647.0,
-   "last_ts": 1787954312.440725
+   "last_mcap": 589887.0,
+   "last_ts": 1787983675.321221
+  },
+  "Cented|J4DMRf1ceZnyr9Loa1cBhfCPbDYypNuvaoV8EwGapump": {
+   "kol": "Cented",
+   "mint": "J4DMRf1ceZnyr9Loa1cBhfCPbDYypNuvaoV8EwGapump",
+   "entry_mcap": 705443.0,
+   "entry_ts": 1787983675.192177,
+   "peak_mcap": 885206.0,
+   "last_mcap": 885206.0,
+   "last_ts": 1787983675.321223
+  },
+  "Gake|J4DMRf1ceZnyr9Loa1cBhfCPbDYypNuvaoV8EwGapump": {
+   "kol": "Gake",
+   "mint": "J4DMRf1ceZnyr9Loa1cBhfCPbDYypNuvaoV8EwGapump",
+   "entry_mcap": 705443.0,
+   "entry_ts": 1787983675.192186,
+   "peak_mcap": 885206.0,
+   "last_mcap": 885206.0,
+   "last_ts": 1787983675.321224
+  },
+  "Gake|MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump": {
+   "kol": "Gake",
+   "mint": "MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump",
+   "entry_mcap": 609355.0,
+   "entry_ts": 1787983675.192189,
+   "peak_mcap": 609355.0,
+   "last_mcap": 589887.0,
+   "last_ts": 1787983675.321225
+  },
+  "Solcrow|A4Ma16Xr7fk7VVT8ibyyhY5PGuvUCHCVKMfgAwqwpump": {
+   "kol": "Solcrow",
+   "mint": "A4Ma16Xr7fk7VVT8ibyyhY5PGuvUCHCVKMfgAwqwpump",
+   "entry_mcap": 94243.0,
+   "entry_ts": 1787983675.192195,
+   "peak_mcap": 94243.0,
+   "last_mcap": 92861.0,
+   "last_ts": 1787983675.321226
+  },
+  "Cooker|A4Ma16Xr7fk7VVT8ibyyhY5PGuvUCHCVKMfgAwqwpump": {
+   "kol": "Cooker",
+   "mint": "A4Ma16Xr7fk7VVT8ibyyhY5PGuvUCHCVKMfgAwqwpump",
+   "entry_mcap": 94243.0,
+   "entry_ts": 1787983675.192198,
+   "peak_mcap": 94243.0,
+   "last_mcap": 92861.0,
+   "last_ts": 1787983675.321227
+  },
+  "Witloof|A4Ma16Xr7fk7VVT8ibyyhY5PGuvUCHCVKMfgAwqwpump": {
+   "kol": "Witloof",
+   "mint": "A4Ma16Xr7fk7VVT8ibyyhY5PGuvUCHCVKMfgAwqwpump",
+   "entry_mcap": 94243.0,
+   "entry_ts": 1787983675.1922,
+   "peak_mcap": 94243.0,
+   "last_mcap": 92861.0,
+   "last_ts": 1787983675.321228
+  },
+  "OGAntD|EMWtbpHaNqMbjUMZguuazhuZUVLWG3z4C5oZnGJPSqxS": {
+   "kol": "OGAntD",
+   "mint": "EMWtbpHaNqMbjUMZguuazhuZUVLWG3z4C5oZnGJPSqxS",
+   "entry_mcap": 480497.0,
+   "entry_ts": 1787983675.192203,
+   "peak_mcap": 509995.0,
+   "last_mcap": 509995.0,
+   "last_ts": 1787983675.321229
+  },
+  "LatucheFR|EMWtbpHaNqMbjUMZguuazhuZUVLWG3z4C5oZnGJPSqxS": {
+   "kol": "LatucheFR",
+   "mint": "EMWtbpHaNqMbjUMZguuazhuZUVLWG3z4C5oZnGJPSqxS",
+   "entry_mcap": 480497.0,
+   "entry_ts": 1787983675.192205,
+   "peak_mcap": 509995.0,
+   "last_mcap": 509995.0,
+   "last_ts": 1787983675.32123
   }
  },
  "scores": {
@@ -103,7 +175,7 @@
    "early_alpha_10x": 0.0,
    "median_multiple": 1.07,
    "median_entry_mcap": 155452,
-   "still_up_rate": 100.0,
+   "still_up_rate": 0.0,
    "dead_rate": 0.0,
    "measured": false
   },
@@ -113,9 +185,9 @@
    "early_alpha_3x": 0.0,
    "early_alpha_5x": 0.0,
    "early_alpha_10x": 0.0,
-   "median_multiple": 1.08,
+   "median_multiple": 1.3,
    "median_entry_mcap": 133575,
-   "still_up_rate": 0.0,
+   "still_up_rate": 100.0,
    "dead_rate": 0.0,
    "measured": false
   },
@@ -156,31 +228,91 @@
    "measured": false
   },
   "Cooker": {
-   "calls": 1,
+   "calls": 2,
    "early_alpha_2x": 0.0,
    "early_alpha_3x": 0.0,
    "early_alpha_5x": 0.0,
    "early_alpha_10x": 0.0,
    "median_multiple": 1.0,
-   "median_entry_mcap": 170635,
+   "median_entry_mcap": 132439,
    "still_up_rate": 0.0,
    "dead_rate": 0.0,
    "measured": false
   },
   "Witloof": {
+   "calls": 2,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.0,
+   "median_entry_mcap": 244271,
+   "still_up_rate": 0.0,
+   "dead_rate": 50.0,
+   "measured": false
+  },
+  "Cented": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.25,
+   "median_entry_mcap": 705443,
+   "still_up_rate": 100.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "Gake": {
+   "calls": 2,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.13,
+   "median_entry_mcap": 657399,
+   "still_up_rate": 50.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "Solcrow": {
    "calls": 1,
    "early_alpha_2x": 0.0,
    "early_alpha_3x": 0.0,
    "early_alpha_5x": 0.0,
    "early_alpha_10x": 0.0,
    "median_multiple": 1.0,
-   "median_entry_mcap": 394299,
+   "median_entry_mcap": 94243,
    "still_up_rate": 0.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "OGAntD": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.06,
+   "median_entry_mcap": 480497,
+   "still_up_rate": 100.0,
+   "dead_rate": 0.0,
+   "measured": false
+  },
+  "LatucheFR": {
+   "calls": 1,
+   "early_alpha_2x": 0.0,
+   "early_alpha_3x": 0.0,
+   "early_alpha_5x": 0.0,
+   "early_alpha_10x": 0.0,
+   "median_multiple": 1.06,
+   "median_entry_mcap": 480497,
+   "still_up_rate": 100.0,
    "dead_rate": 0.0,
    "measured": false
   }
  },
- "updated_at": "2026-08-28T21:58:32.440814+00:00",
+ "updated_at": "2026-08-29T06:07:55.321401+00:00",
  "ranking": [
   {
    "kol": "Cented",
@@ -188,7 +320,7 @@
    "seed_tier": "S",
    "value": 80.0,
    "basis": "reputation prior",
-   "calls": 0
+   "calls": 1
   },
   {
    "kol": "Euris",
@@ -308,7 +440,7 @@
    "seed_tier": "A",
    "value": 62.0,
    "basis": "reputation prior",
-   "calls": 0
+   "calls": 2
   },
   {
    "kol": "Pow",
@@ -468,7 +600,7 @@
    "seed_tier": "A",
    "value": 62.0,
    "basis": "reputation prior",
-   "calls": 0
+   "calls": 1
   },
   {
    "kol": "Solcrow",
@@ -476,7 +608,7 @@
    "seed_tier": "A",
    "value": 62.0,
    "basis": "reputation prior",
-   "calls": 0
+   "calls": 1
   },
   {
    "kol": "Cooker",
@@ -484,7 +616,7 @@
    "seed_tier": "A",
    "value": 62.0,
    "basis": "reputation prior",
-   "calls": 1
+   "calls": 2
   },
   {
    "kol": "Rookiexbt",
@@ -764,7 +896,7 @@
    "seed_tier": "C",
    "value": 30.0,
    "basis": "reputation prior",
-   "calls": 0
+   "calls": 1
   },
   {
    "kol": "LeykoFR",
@@ -836,7 +968,7 @@
    "seed_tier": "C",
    "value": 30.0,
    "basis": "reputation prior",
-   "calls": 1
+   "calls": 2
   },
   {
    "kol": "Owen",
