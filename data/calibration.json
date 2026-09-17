@@ -8202,7 +8202,7 @@
       "delisted": false
     }
   ],
-  "runs": 46,
+  "runs": 47,
   "calibrated": true,
   "sample_size": 482,
   "stats": {
@@ -8214,7 +8214,7 @@
     "kol_median": -62.0,
     "kol_n": 16
   },
-  "updated_at": "2026-09-17T10:57:55.745834+00:00",
+  "updated_at": "2026-09-17T22:44:20.841401+00:00",
   "correlations": {
     "momentum": -0.09,
     "volume": 0.1,
