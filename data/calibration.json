@@ -1,352 +1,12 @@
 {
   "weights": {
-    "momentum": 0.0477,
-    "volume": 0.4282,
-    "liquidity": 0.4289,
-    "social": 0.0477,
-    "freshness": 0.0477
+    "momentum": 0.0478,
+    "volume": 0.4268,
+    "liquidity": 0.4299,
+    "social": 0.0478,
+    "freshness": 0.0478
   },
   "observations": [
-    {
-      "mint": "DGxNfqdqQLxCdrNZrbcA9AutX2cobj7Nx4dpJmDVpump",
-      "symbol": "FONELESS",
-      "return_pct": -98.8,
-      "parts": {
-        "momentum": 22.6,
-        "volume": 50.3,
-        "liquidity": 42.3,
-        "social": 70.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 0.8
-      },
-      "score": 50.51,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
-      "symbol": "STONK",
-      "return_pct": -11.6,
-      "parts": {
-        "momentum": 3.8,
-        "volume": 58.7,
-        "liquidity": 64.9,
-        "social": 80.0,
-        "freshness": 40.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 1.0
-      },
-      "score": 47.66,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "BRZ5aeJCDuruA42V1CntqKvofa2G7DS3yyxx1pZEpump",
-      "symbol": "moonkey",
-      "return_pct": -39.5,
-      "parts": {
-        "momentum": 2.8,
-        "volume": 35.4,
-        "liquidity": 51.0,
-        "social": 80.0,
-        "freshness": 70.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 1.0
-      },
-      "score": 47.25,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "DpBzjtgGLF7QA9Ug3eUVGbnqa6j3jvYBn1XuQuktvfhm",
-      "symbol": "DOGE-1",
-      "return_pct": -50.7,
-      "parts": {
-        "momentum": 6.3,
-        "volume": 44.1,
-        "liquidity": 65.8,
-        "social": 80.0,
-        "freshness": 20.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 1.0
-      },
-      "score": 37.53,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L",
-      "symbol": "CTO",
-      "return_pct": -11.4,
-      "parts": {
-        "momentum": 40.0,
-        "volume": 78.9,
-        "liquidity": 66.7,
-        "social": 45.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.5,
-        "trust_factor": 0.9
-      },
-      "score": 104.7,
-      "kol_buyers": 3,
-      "delisted": false
-    },
-    {
-      "mint": "49FXK7sSJT9f6c9WQ36VsaN73XmBiCQfgsELTqAFqrcK",
-      "symbol": "POGGERS",
-      "return_pct": -33.4,
-      "parts": {
-        "momentum": 30.1,
-        "volume": 60.0,
-        "liquidity": 44.3,
-        "social": 45.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.3,
-        "trust_factor": 0.9
-      },
-      "score": 80.01,
-      "kol_buyers": 1,
-      "delisted": false
-    },
-    {
-      "mint": "5jNB5YFamqs3iifyhs34ERox2En3EBc1v5CdgHkmpump",
-      "symbol": "COIN",
-      "return_pct": -85.8,
-      "parts": {
-        "momentum": 9.9,
-        "volume": 55.8,
-        "liquidity": 39.5,
-        "social": 80.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.4,
-        "trust_factor": 0.7
-      },
-      "score": 66.52,
-      "kol_buyers": 2,
-      "delisted": false
-    },
-    {
-      "mint": "4h5d9ejz8QSfzhAAVMLU5s9uFNzv3xmK6UuZK2PDpump",
-      "symbol": "BEAVER",
-      "return_pct": -82.1,
-      "parts": {
-        "momentum": 29.2,
-        "volume": 52.8,
-        "liquidity": 38.5,
-        "social": 65.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.2,
-        "trust_factor": 0.8
-      },
-      "score": 62.73,
-      "kol_buyers": 1,
-      "delisted": false
-    },
-    {
-      "mint": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-      "symbol": "CATE",
-      "return_pct": -29.8,
-      "parts": {
-        "momentum": 6.1,
-        "volume": 79.2,
-        "liquidity": 94.3,
-        "social": 80.0,
-        "freshness": 40.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 1.0
-      },
-      "score": 62.36,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "43uJZGxfZcsiL29k1vpwd7H6up5qgMAoU1aMb5Rmpump",
-      "symbol": "BEN",
-      "return_pct": -42.9,
-      "parts": {
-        "momentum": 12.6,
-        "volume": 51.6,
-        "liquidity": 44.6,
-        "social": 45.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.3,
-        "trust_factor": 0.8
-      },
-      "score": 59.12,
-      "kol_buyers": 1,
-      "delisted": false
-    },
-    {
-      "mint": "bykrhkExmjWco2mFxKGX3XPmPVaZB9JJp9MkRe8pump",
-      "symbol": "Shrek",
-      "return_pct": -22.3,
-      "parts": {
-        "momentum": 24.0,
-        "volume": 54.4,
-        "liquidity": 50.7,
-        "social": 45.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 0.8
-      },
-      "score": 52.85,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "FsMM8hMqz4fQhKfAv3beqGz5oiJWtXNdmdt3hQskpump",
-      "symbol": "SOLBROS",
-      "return_pct": -98.5,
-      "parts": {
-        "momentum": 30.3,
-        "volume": 52.6,
-        "liquidity": 39.8,
-        "social": 70.0,
-        "freshness": 60.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 1.0
-      },
-      "score": 50.74,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
-      "symbol": "STONK",
-      "return_pct": 10.4,
-      "parts": {
-        "momentum": 5.4,
-        "volume": 57.5,
-        "liquidity": 65.4,
-        "social": 80.0,
-        "freshness": 40.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 0.9
-      },
-      "score": 46.32,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "2kvQpbNcdToU8hhA7b47RDw8ivc79Kb43WUYgd3npump",
-      "symbol": "SOLBEN",
-      "return_pct": -98.3,
-      "parts": {
-        "momentum": 10.1,
-        "volume": 45.4,
-        "liquidity": 38.7,
-        "social": 85.0,
-        "freshness": 60.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 0.9
-      },
-      "score": 42.65,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "4ChT49V1iazP2XUGtycGkEsS6pRMqvGfUbqvRC9Z91ZT",
-      "symbol": "MOS",
-      "return_pct": -48.1,
-      "parts": {
-        "momentum": 2.7,
-        "volume": 45.1,
-        "liquidity": 70.1,
-        "social": 65.0,
-        "freshness": 40.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 0.8
-      },
-      "score": 38.57,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "DpBzjtgGLF7QA9Ug3eUVGbnqa6j3jvYBn1XuQuktvfhm",
-      "symbol": "DOGE-1",
-      "return_pct": -42.5,
-      "parts": {
-        "momentum": 2.1,
-        "volume": 40.3,
-        "liquidity": 66.1,
-        "social": 80.0,
-        "freshness": 20.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 1.0
-      },
-      "score": 37.35,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L",
-      "symbol": "CTO",
-      "return_pct": -6.5,
-      "parts": {
-        "momentum": 26.0,
-        "volume": 74.6,
-        "liquidity": 62.0,
-        "social": 45.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.3,
-        "trust_factor": 1.0
-      },
-      "score": 95.36,
-      "kol_buyers": 1,
-      "delisted": false
-    },
-    {
-      "mint": "J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump",
-      "symbol": "TripleT",
-      "return_pct": -21.2,
-      "parts": {
-        "momentum": 7.5,
-        "volume": 65.5,
-        "liquidity": 81.9,
-        "social": 60.0,
-        "freshness": 20.0,
-        "kol_multiplier": 1.5,
-        "trust_factor": 1.0
-      },
-      "score": 75.68,
-      "kol_buyers": 2,
-      "delisted": false
-    },
-    {
-      "mint": "HmJDgky11u77hpBss6D8sjNpYPD5B6fWgSVDj58jpump",
-      "symbol": "SOLCAT",
-      "return_pct": -66.4,
-      "parts": {
-        "momentum": 2.3,
-        "volume": 63.6,
-        "liquidity": 57.9,
-        "social": 65.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 1.0
-      },
-      "score": 69.67,
-      "kol_buyers": 0,
-      "delisted": false
-    },
-    {
-      "mint": "CbyTNf7UPzvewHh4Zp6umogM2RWahhmGRJWLJnPwpump",
-      "symbol": "biketyson",
-      "return_pct": -53.7,
-      "parts": {
-        "momentum": 47.3,
-        "volume": 64.7,
-        "liquidity": 49.1,
-        "social": 45.0,
-        "freshness": 100.0,
-        "kol_multiplier": 1.0,
-        "trust_factor": 0.9
-      },
-      "score": 63.85,
-      "kol_buyers": 0,
-      "delisted": false
-    },
     {
       "mint": "TcnKFgDZc6RhAz83JHHbWeZ5wLc2at8iHK6FhsxkTLh",
       "symbol": "Lucia",
@@ -10206,26 +9866,366 @@
       "score": 45.2,
       "kol_buyers": 0,
       "delisted": false
+    },
+    {
+      "mint": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
+      "symbol": "SI",
+      "return_pct": -3.7,
+      "parts": {
+        "momentum": 26.8,
+        "volume": 64.0,
+        "liquidity": 69.4,
+        "social": 20.0,
+        "freshness": 70.0,
+        "kol_multiplier": 1.6,
+        "trust_factor": 0.7
+      },
+      "score": 74.39,
+      "kol_buyers": 4,
+      "delisted": false
+    },
+    {
+      "mint": "H8WTvo3ZXSYHJAcYqzCforbG8coR1FDAX2kHFfqHBAGS",
+      "symbol": "BAGSPAY",
+      "return_pct": 46.1,
+      "parts": {
+        "momentum": 30.7,
+        "volume": 73.0,
+        "liquidity": 56.5,
+        "social": 0.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.3,
+        "trust_factor": 0.9
+      },
+      "score": 71.53,
+      "kol_buyers": 1,
+      "delisted": false
+    },
+    {
+      "mint": "GTBxUiw6wJdmmkCGZgRHLyYxqu1vG4KtRpeox6yDpump",
+      "symbol": "JEANPHIL",
+      "return_pct": -13.3,
+      "parts": {
+        "momentum": 8.4,
+        "volume": 59.1,
+        "liquidity": 68.8,
+        "social": 45.0,
+        "freshness": 70.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 1.0
+      },
+      "score": 60.69,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "3kmygWKZBkCYrgZHKfiuB9UFKTcDLTFFsKo3BWpmpump",
+      "symbol": "PARASITE",
+      "return_pct": -63.0,
+      "parts": {
+        "momentum": 41.1,
+        "volume": 70.5,
+        "liquidity": 57.9,
+        "social": 70.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.8
+      },
+      "score": 53.37,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump",
+      "symbol": "baton",
+      "return_pct": -35.6,
+      "parts": {
+        "momentum": 7.8,
+        "volume": 50.6,
+        "liquidity": 73.9,
+        "social": 80.0,
+        "freshness": 40.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.9
+      },
+      "score": 52.32,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "84D3VopU3g5qo7jUwzQK4P4BnVPQWr2MzeaRCFkHpump",
+      "symbol": "POND",
+      "return_pct": -40.1,
+      "parts": {
+        "momentum": 8.1,
+        "volume": 55.2,
+        "liquidity": 38.8,
+        "social": 65.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.3,
+        "trust_factor": 0.8
+      },
+      "score": 50.65,
+      "kol_buyers": 1,
+      "delisted": false
+    },
+    {
+      "mint": "HGN8K3x5ZLfYNjvE8b1hCqqu7RwupuKU6EkEhemzpump",
+      "symbol": "SNOWBALL",
+      "return_pct": -75.2,
+      "parts": {
+        "momentum": 6.2,
+        "volume": 51.6,
+        "liquidity": 44.5,
+        "social": 70.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.8
+      },
+      "score": 42.16,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "A71Uf3jwg57fNedSao9eFwm9eKSLYFbVJ85T4fuXpump",
+      "symbol": "cNFTs",
+      "return_pct": -92.2,
+      "parts": {
+        "momentum": 5.3,
+        "volume": 48.4,
+        "liquidity": 39.2,
+        "social": 65.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.2,
+        "trust_factor": 0.7
+      },
+      "score": 38.86,
+      "kol_buyers": 1,
+      "delisted": false
+    },
+    {
+      "mint": "H4KUxsEgCp2yDpFvyDuGM5k6XevSKKrrKUxZ3Zr6nyJc",
+      "symbol": "COCKROACH",
+      "return_pct": 1.8,
+      "parts": {
+        "momentum": 55.5,
+        "volume": 67.1,
+        "liquidity": 51.5,
+        "social": 0.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.6,
+        "trust_factor": 0.9
+      },
+      "score": 82.59,
+      "kol_buyers": 2,
+      "delisted": false
+    },
+    {
+      "mint": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
+      "symbol": "SI",
+      "return_pct": -31.5,
+      "parts": {
+        "momentum": 29.3,
+        "volume": 64.0,
+        "liquidity": 71.7,
+        "social": 20.0,
+        "freshness": 70.0,
+        "kol_multiplier": 1.6,
+        "trust_factor": 0.7
+      },
+      "score": 72.66,
+      "kol_buyers": 3,
+      "delisted": false
+    },
+    {
+      "mint": "GTBxUiw6wJdmmkCGZgRHLyYxqu1vG4KtRpeox6yDpump",
+      "symbol": "JEANPHIL",
+      "return_pct": -74.1,
+      "parts": {
+        "momentum": 81.1,
+        "volume": 55.7,
+        "liquidity": 79.7,
+        "social": 45.0,
+        "freshness": 70.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 1.0
+      },
+      "score": 67.4,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "6ZG6fMHaE7NpubJr16G8nFLBg91rH5kU5SVpqUmQpump",
+      "symbol": "AIRPAD",
+      "return_pct": -99.4,
+      "parts": {
+        "momentum": 47.6,
+        "volume": 67.4,
+        "liquidity": 53.7,
+        "social": 85.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.9
+      },
+      "score": 57.31,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "6qBR7sk15ZVdt1vx6j1JgtkuurK8WrapugFptWQCyzL6",
+      "symbol": "Pygoscelis",
+      "return_pct": -71.1,
+      "parts": {
+        "momentum": 52.1,
+        "volume": 59.6,
+        "liquidity": 47.9,
+        "social": 70.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 1.0
+      },
+      "score": 56.67,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump",
+      "symbol": "OTC",
+      "return_pct": 112.3,
+      "parts": {
+        "momentum": 6.2,
+        "volume": 52.9,
+        "liquidity": 74.8,
+        "social": 65.0,
+        "freshness": 40.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.9
+      },
+      "score": 54.65,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "BYaxkgDfkUApMgsXu4SiJ5yc6DTSfLxp6an3PvVVpump",
+      "symbol": "SS",
+      "return_pct": -99.7,
+      "parts": {
+        "momentum": 41.8,
+        "volume": 58.1,
+        "liquidity": 53.3,
+        "social": 70.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.9
+      },
+      "score": 54.35,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "resideK2Ejv9apu1op2VBv89poumxCDCs8nzBxQ5q1y",
+      "symbol": "RESI",
+      "return_pct": -49.9,
+      "parts": {
+        "momentum": 40.0,
+        "volume": 62.1,
+        "liquidity": 47.1,
+        "social": 85.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.8
+      },
+      "score": 47.18,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "J47Jmw8ndwu6Vt6ZubD9C9VUVHi6uWsBE2XPsEjmpump",
+      "symbol": "FKCANCER",
+      "return_pct": -96.0,
+      "parts": {
+        "momentum": 10.8,
+        "volume": 47.9,
+        "liquidity": 38.1,
+        "social": 85.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 1.0
+      },
+      "score": 46.19,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "84D3VopU3g5qo7jUwzQK4P4BnVPQWr2MzeaRCFkHpump",
+      "symbol": "POND",
+      "return_pct": -51.7,
+      "parts": {
+        "momentum": 3.2,
+        "volume": 59.2,
+        "liquidity": 40.4,
+        "social": 65.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.9
+      },
+      "score": 46.16,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "H8WTvo3ZXSYHJAcYqzCforbG8coR1FDAX2kHFfqHBAGS",
+      "symbol": "BAGSPAY",
+      "return_pct": 56.1,
+      "parts": {
+        "momentum": 6.1,
+        "volume": 61.5,
+        "liquidity": 56.9,
+        "social": 0.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.8
+      },
+      "score": 45.74,
+      "kol_buyers": 0,
+      "delisted": false
+    },
+    {
+      "mint": "6iAj2oywQMiD9NeyTcW1S7UtG7e3jSK7Ud5ZJDqJpump",
+      "symbol": "HI",
+      "return_pct": 77.6,
+      "parts": {
+        "momentum": 18.3,
+        "volume": 46.0,
+        "liquidity": 42.3,
+        "social": 50.0,
+        "freshness": 100.0,
+        "kol_multiplier": 1.0,
+        "trust_factor": 0.9
+      },
+      "score": 41.72,
+      "kol_buyers": 0,
+      "delisted": false
     }
   ],
-  "runs": 73,
+  "runs": 74,
   "calibrated": true,
   "sample_size": 600,
   "stats": {
     "n": 600,
     "median_return": -30.2,
-    "hit_rate": 27.0,
-    "big_win_rate": 9.0,
+    "hit_rate": 27.7,
+    "big_win_rate": 9.2,
     "rug_rate": 0.0,
-    "kol_median": -20.4,
-    "kol_n": 18
+    "kol_median": -24.8,
+    "kol_n": 19
   },
-  "updated_at": "2026-09-30T23:34:10.000551+00:00",
+  "updated_at": "2026-10-01T12:27:09.676667+00:00",
   "correlations": {
-    "momentum": -0.13,
-    "volume": 0.064,
-    "liquidity": 0.187,
-    "social": -0.166,
-    "freshness": -0.091
+    "momentum": -0.141,
+    "volume": 0.057,
+    "liquidity": 0.183,
+    "social": -0.171,
+    "freshness": -0.099
   }
 }
