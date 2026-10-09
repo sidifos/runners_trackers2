@@ -1,10 +1,10 @@
 {
   "weights": {
-    "momentum": 0.0504,
-    "volume": 0.3958,
-    "liquidity": 0.4532,
-    "social": 0.0504,
-    "freshness": 0.0504
+    "momentum": 0.0506,
+    "volume": 0.3932,
+    "liquidity": 0.4551,
+    "social": 0.0506,
+    "freshness": 0.0506
   },
   "observations": [
     {
@@ -10208,7 +10208,7 @@
       "delisted": false
     }
   ],
-  "runs": 89,
+  "runs": 90,
   "calibrated": true,
   "sample_size": 600,
   "stats": {
@@ -10220,7 +10220,7 @@
     "kol_median": -24.8,
     "kol_n": 19
   },
-  "updated_at": "2026-10-09T00:12:13.397810+00:00",
+  "updated_at": "2026-10-09T12:34:38.090476+00:00",
   "correlations": {
     "momentum": -0.164,
     "volume": -0.019,
