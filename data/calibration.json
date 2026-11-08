@@ -2,8 +2,8 @@
   "weights": {
     "momentum": 0.0491,
     "volume": 0.0491,
-    "liquidity": 0.4419,
-    "social": 0.4109,
+    "liquidity": 0.442,
+    "social": 0.4106,
     "freshness": 0.0491
   },
   "observations": [
@@ -10208,7 +10208,7 @@
       "delisted": false
     }
   ],
-  "runs": 150,
+  "runs": 151,
   "calibrated": true,
   "sample_size": 600,
   "stats": {
@@ -10220,7 +10220,7 @@
     "kol_median": -45.8,
     "kol_n": 7
   },
-  "updated_at": "2026-11-08T12:45:56.416109+00:00",
+  "updated_at": "2026-11-08T23:29:39.290208+00:00",
   "correlations": {
     "momentum": -0.285,
     "volume": -0.191,
