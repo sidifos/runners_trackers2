@@ -15876,7 +15876,7 @@
     "tokens whose volume credibility was already marginal fail 80% of the time vs 58% baseline (worse), median outcome -64% over 50 calls",
     "tokens trading at 20x+ volume/liquidity fail 77% of the time vs 58% baseline (worse), median outcome -64% over 118 calls"
   ],
-  "reviews": 179,
+  "reviews": 180,
   "suggested_config": {
     "min_age_hours": {
       "from": 3,
@@ -15889,7 +15889,7 @@
       "why": "tokens whose volume credibility was already marginal fail 80% of the time vs 58% baseline (worse), median outcome -64% over 50 calls"
     }
   },
-  "updated_at": "2026-11-25T16:47:43.908024+00:00",
+  "updated_at": "2026-11-26T02:42:05.501644+00:00",
   "scorecard": {
     "reviewed": 120,
     "good": 13,
