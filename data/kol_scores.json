@@ -1,22 +1,13 @@
 {
  "trades": {
-  "Mitch|33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump": {
-   "kol": "Mitch",
-   "mint": "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
-   "entry_mcap": 1285814.0,
-   "entry_ts": 1791898605.311533,
-   "peak_mcap": 5346843.0,
-   "last_mcap": 729437.0,
-   "last_ts": 1795747463.24882
-  },
   "Cooker|HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump": {
    "kol": "Cooker",
    "mint": "HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump",
    "entry_mcap": 16243336.0,
    "entry_ts": 1791934879.744246,
    "peak_mcap": 16243336.0,
-   "last_mcap": 171224.0,
-   "last_ts": 1795747463.24883
+   "last_mcap": 167744.0,
+   "last_ts": 1795795849.638014
   },
   "Cooker|3ZWo461YsQopTrdis9F7ykkapMowyQnKVGmEecsEpump": {
    "kol": "Cooker",
@@ -25,7 +16,7 @@
    "entry_ts": 1791934879.744255,
    "peak_mcap": 270765.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248832
+   "last_ts": 1795795849.638025
   },
   "Dior|jq4yKhqGNzWCQhgQYB89CDEYQYjLHGcvDy9WNJHpump": {
    "kol": "Dior",
@@ -34,7 +25,7 @@
    "entry_ts": 1791976425.898605,
    "peak_mcap": 101599.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248833
+   "last_ts": 1795795849.638026
   },
   "Solcrow|A2yA6AFtfKkfVkfsnGpvsKoUV5kQPpMYboZsBPvmkA9T": {
    "kol": "Solcrow",
@@ -42,8 +33,8 @@
    "entry_mcap": 512920.0,
    "entry_ts": 1792019154.204209,
    "peak_mcap": 719462.0,
-   "last_mcap": 22061.0,
-   "last_ts": 1795747463.248834
+   "last_mcap": 22227.0,
+   "last_ts": 1795795849.638028
   },
   "Dior|DRcSf5SrVeJTt7QTn5irVi3vFqsAqJtPKDUw89C6pump": {
    "kol": "Dior",
@@ -51,8 +42,8 @@
    "entry_mcap": 127059.0,
    "entry_ts": 1792061650.885294,
    "peak_mcap": 127059.0,
-   "last_mcap": 2629.0,
-   "last_ts": 1795747463.248835
+   "last_mcap": 2859.0,
+   "last_ts": 1795795849.638029
   },
   "Solcrow|FaVCaBWZmZ9m7J2dSJVgoCfDFQamchmsgia3Q2SHpump": {
    "kol": "Solcrow",
@@ -61,7 +52,7 @@
    "entry_ts": 1792061650.885304,
    "peak_mcap": 56176.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248837
+   "last_ts": 1795795849.63803
   },
   "Dior|DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump": {
    "kol": "Dior",
@@ -69,8 +60,8 @@
    "entry_mcap": 5843859.0,
    "entry_ts": 1792147482.639736,
    "peak_mcap": 5843859.0,
-   "last_mcap": 87324.0,
-   "last_ts": 1795747463.248838
+   "last_mcap": 86040.0,
+   "last_ts": 1795795849.638031
   },
   "Cooker|DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump": {
    "kol": "Cooker",
@@ -78,8 +69,8 @@
    "entry_mcap": 5843859.0,
    "entry_ts": 1792147482.639746,
    "peak_mcap": 5843859.0,
-   "last_mcap": 87324.0,
-   "last_ts": 1795747463.248839
+   "last_mcap": 86040.0,
+   "last_ts": 1795795849.638032
   },
   "Smokez|DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump": {
    "kol": "Smokez",
@@ -87,8 +78,8 @@
    "entry_mcap": 5843859.0,
    "entry_ts": 1792147482.639749,
    "peak_mcap": 5843859.0,
-   "last_mcap": 87324.0,
-   "last_ts": 1795747463.24884
+   "last_mcap": 86040.0,
+   "last_ts": 1795795849.638034
   },
   "Cooker|2nP9yKQNSGQy851iyawDvBkzkK2R2aqKArQCKc2gpump": {
    "kol": "Cooker",
@@ -96,8 +87,8 @@
    "entry_mcap": 949758.0,
    "entry_ts": 1792147482.639755,
    "peak_mcap": 980617.0,
-   "last_mcap": 502410.0,
-   "last_ts": 1795747463.248841
+   "last_mcap": 488414.0,
+   "last_ts": 1795795849.638035
   },
   "Cooker|9KDhovVA2kdjngkFooqEn5FoKkuZeDMYiQtVk7Lbm9up": {
    "kol": "Cooker",
@@ -105,8 +96,8 @@
    "entry_mcap": 152265.0,
    "entry_ts": 1792190550.938777,
    "peak_mcap": 152265.0,
-   "last_mcap": 9188.0,
-   "last_ts": 1795747463.248842
+   "last_mcap": 7806.0,
+   "last_ts": 1795795849.638036
   },
   "Hesi|B2GESkSErPjuCq6n4LcaJP5v2z1kJnw3xHVZnop2sZx": {
    "kol": "Hesi",
@@ -114,8 +105,8 @@
    "entry_mcap": 970466.0,
    "entry_ts": 1792231847.281849,
    "peak_mcap": 2931285.0,
-   "last_mcap": 49418.0,
-   "last_ts": 1795747463.248843
+   "last_mcap": 36974.0,
+   "last_ts": 1795795849.638037
   },
   "Loopier|FeSqDFg1vMsB7dsWXE3UWURwUVksJArWWWynnhgiaaQ6": {
    "kol": "Loopier",
@@ -123,8 +114,8 @@
    "entry_mcap": 80962.0,
    "entry_ts": 1792274692.507951,
    "peak_mcap": 122599.0,
-   "last_mcap": 7390.0,
-   "last_ts": 1795747463.248844
+   "last_mcap": 8200.0,
+   "last_ts": 1795795849.638038
   },
   "Cooker|55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump": {
    "kol": "Cooker",
@@ -132,8 +123,8 @@
    "entry_mcap": 1537763.0,
    "entry_ts": 1792274692.50796,
    "peak_mcap": 1537763.0,
-   "last_mcap": 28903.0,
-   "last_ts": 1795747463.248845
+   "last_mcap": 28233.0,
+   "last_ts": 1795795849.638039
   },
   "Mitch|9kXG537MZvtTBUieRvrye9KG93FbA25QAk7zf5oYpump": {
    "kol": "Mitch",
@@ -141,8 +132,8 @@
    "entry_mcap": 211554.0,
    "entry_ts": 1792319185.448013,
    "peak_mcap": 212212.0,
-   "last_mcap": 0.0,
-   "last_ts": 1795747463.248845
+   "last_mcap": 5816.0,
+   "last_ts": 1795795849.63804
   },
   "Dior|55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump": {
    "kol": "Dior",
@@ -150,8 +141,8 @@
    "entry_mcap": 542214.0,
    "entry_ts": 1792319185.448028,
    "peak_mcap": 626119.0,
-   "last_mcap": 28903.0,
-   "last_ts": 1795747463.248846
+   "last_mcap": 28233.0,
+   "last_ts": 1795795849.638042
   },
   "Kreo|3ZAnpeVBHAvZsySNMXp4g9nYaE1jsx6khgh29VYKpump": {
    "kol": "Kreo",
@@ -159,8 +150,8 @@
    "entry_mcap": 466530.0,
    "entry_ts": 1792319185.448032,
    "peak_mcap": 478697.0,
-   "last_mcap": 4380.0,
-   "last_ts": 1795747463.248847
+   "last_mcap": 4317.0,
+   "last_ts": 1795795849.638042
   },
   "Owen|48hnR1CWtafBumJsJod6Q8yduwDuYyumCJzuBVzvpump": {
    "kol": "Owen",
@@ -168,8 +159,8 @@
    "entry_mcap": 254705.0,
    "entry_ts": 1792319185.448037,
    "peak_mcap": 274871.0,
-   "last_mcap": 17466.0,
-   "last_ts": 1795747463.248848
+   "last_mcap": 16008.0,
+   "last_ts": 1795795849.638043
   },
   "Qtdegen|B2GESkSErPjuCq6n4LcaJP5v2z1kJnw3xHVZnop2sZx": {
    "kol": "Qtdegen",
@@ -177,8 +168,8 @@
    "entry_mcap": 2931951.0,
    "entry_ts": 1792319185.44804,
    "peak_mcap": 2931951.0,
-   "last_mcap": 49418.0,
-   "last_ts": 1795747463.248849
+   "last_mcap": 36974.0,
+   "last_ts": 1795795849.638044
   },
   "Giann|B2GESkSErPjuCq6n4LcaJP5v2z1kJnw3xHVZnop2sZx": {
    "kol": "Giann",
@@ -186,8 +177,8 @@
    "entry_mcap": 2931951.0,
    "entry_ts": 1792319185.448043,
    "peak_mcap": 2931951.0,
-   "last_mcap": 49418.0,
-   "last_ts": 1795747463.24885
+   "last_mcap": 36974.0,
+   "last_ts": 1795795849.638045
   },
   "OGAntD|HqmFi85adLD8BQA7en1HfajdAfzVFps5REgQaYuw6Ax8": {
    "kol": "OGAntD",
@@ -196,7 +187,7 @@
    "entry_ts": 1792362013.79095,
    "peak_mcap": 2428538.0,
    "last_mcap": 5401.0,
-   "last_ts": 1795747463.248851
+   "last_ts": 1795795849.638046
   },
   "Ansem|nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump": {
    "kol": "Ansem",
@@ -204,8 +195,8 @@
    "entry_mcap": 4392587.0,
    "entry_ts": 1792411828.30194,
    "peak_mcap": 12800586.0,
-   "last_mcap": 59030.0,
-   "last_ts": 1795747463.248852
+   "last_mcap": 65666.0,
+   "last_ts": 1795795849.638047
   },
   "Ansem|D3S6J9s1byrNBt3ZKwEDiPsNRqHtoEP8zQKdhyBdpump": {
    "kol": "Ansem",
@@ -213,8 +204,8 @@
    "entry_mcap": 1433977.0,
    "entry_ts": 1792411828.301949,
    "peak_mcap": 1433977.0,
-   "last_mcap": 5079.0,
-   "last_ts": 1795747463.248853
+   "last_mcap": 6028.0,
+   "last_ts": 1795795849.638048
   },
   "Mitch|ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump": {
    "kol": "Mitch",
@@ -222,8 +213,8 @@
    "entry_mcap": 112341.0,
    "entry_ts": 1792411828.301954,
    "peak_mcap": 112341.0,
-   "last_mcap": 3469.0,
-   "last_ts": 1795747463.248854
+   "last_mcap": 3556.0,
+   "last_ts": 1795795849.638049
   },
   "Dior|FGkCj28xhabWTYg9QyzACvs4NsN6LUyesP6EwiHepump": {
    "kol": "Dior",
@@ -231,8 +222,8 @@
    "entry_mcap": 771521.0,
    "entry_ts": 1792411828.301958,
    "peak_mcap": 806559.0,
-   "last_mcap": 22281.0,
-   "last_ts": 1795747463.248855
+   "last_mcap": 17289.0,
+   "last_ts": 1795795849.638051
   },
   "Mitch|ESnW5ZbLmoEAg2QEMxnMsY9R3aS8Kw58HJacYURmpump": {
    "kol": "Mitch",
@@ -240,8 +231,8 @@
    "entry_mcap": 856510.0,
    "entry_ts": 1792452546.201819,
    "peak_mcap": 856510.0,
-   "last_mcap": 8460.0,
-   "last_ts": 1795747463.248856
+   "last_mcap": 7881.0,
+   "last_ts": 1795795849.638051
   },
   "Ethan|PreweJYECqtQwBtpxHL171nL2K6umo692gTm7Q3rpgF": {
    "kol": "Ethan",
@@ -249,8 +240,8 @@
    "entry_mcap": 2725005.0,
    "entry_ts": 1792493890.980008,
    "peak_mcap": 2752323.0,
-   "last_mcap": 1276810.0,
-   "last_ts": 1795747463.248857
+   "last_mcap": 1202430.0,
+   "last_ts": 1795795849.638053
   },
   "Mitch|ETVsGFnykwYerYw2UY4t28G4mkkgAhtG4h6uyiqMpump": {
    "kol": "Mitch",
@@ -259,7 +250,7 @@
    "entry_ts": 1792537415.863922,
    "peak_mcap": 67959.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248858
+   "last_ts": 1795795849.638053
   },
   "Bronskee|6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx": {
    "kol": "Bronskee",
@@ -267,8 +258,8 @@
    "entry_mcap": 102695188.0,
    "entry_ts": 1792537415.863935,
    "peak_mcap": 156902020.0,
-   "last_mcap": 31963277.0,
-   "last_ts": 1795747463.248858
+   "last_mcap": 33223900.0,
+   "last_ts": 1795795849.638054
   },
   "Zef|6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx": {
    "kol": "Zef",
@@ -276,8 +267,8 @@
    "entry_mcap": 102695188.0,
    "entry_ts": 1792537415.863937,
    "peak_mcap": 156902020.0,
-   "last_mcap": 31963277.0,
-   "last_ts": 1795747463.248859
+   "last_mcap": 33223900.0,
+   "last_ts": 1795795849.638055
   },
   "Mitch|CSocnzcRpgSCr1naKcNTieWZUxb6rABe45j844m7pump": {
    "kol": "Mitch",
@@ -285,8 +276,8 @@
    "entry_mcap": 33949335.0,
    "entry_ts": 1792581177.837404,
    "peak_mcap": 33949335.0,
-   "last_mcap": 1508463.0,
-   "last_ts": 1795747463.24886
+   "last_mcap": 1381925.0,
+   "last_ts": 1795795849.638056
   },
   "Cooker|CSocnzcRpgSCr1naKcNTieWZUxb6rABe45j844m7pump": {
    "kol": "Cooker",
@@ -294,8 +285,8 @@
    "entry_mcap": 33949335.0,
    "entry_ts": 1792581177.837415,
    "peak_mcap": 33949335.0,
-   "last_mcap": 1508463.0,
-   "last_ts": 1795747463.248861
+   "last_mcap": 1381925.0,
+   "last_ts": 1795795849.638057
   },
   "Cooker|Cbkg5w7V7W2J2sUmecnyN825CbvwvXwasfhduVtNpump": {
    "kol": "Cooker",
@@ -303,8 +294,8 @@
    "entry_mcap": 816818.0,
    "entry_ts": 1792581177.837419,
    "peak_mcap": 1185850.0,
-   "last_mcap": 5623.0,
-   "last_ts": 1795747463.248861
+   "last_mcap": 5427.0,
+   "last_ts": 1795795849.638058
   },
   "Ghostee|6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx": {
    "kol": "Ghostee",
@@ -312,8 +303,8 @@
    "entry_mcap": 99917602.0,
    "entry_ts": 1792581177.837422,
    "peak_mcap": 156902020.0,
-   "last_mcap": 31963277.0,
-   "last_ts": 1795747463.248862
+   "last_mcap": 33223900.0,
+   "last_ts": 1795795849.638059
   },
   "Kreo|CMo7GfUhSGXuEfnY7qAzv8hhsV2M2P8GpWqmWikhpump": {
    "kol": "Kreo",
@@ -321,8 +312,8 @@
    "entry_mcap": 853519.0,
    "entry_ts": 1792624024.393042,
    "peak_mcap": 853519.0,
-   "last_mcap": 10335.0,
-   "last_ts": 1795747463.248863
+   "last_mcap": 10828.0,
+   "last_ts": 1795795849.63806
   },
   "Cooker|CMo7GfUhSGXuEfnY7qAzv8hhsV2M2P8GpWqmWikhpump": {
    "kol": "Cooker",
@@ -330,8 +321,8 @@
    "entry_mcap": 853519.0,
    "entry_ts": 1792624024.393051,
    "peak_mcap": 853519.0,
-   "last_mcap": 10335.0,
-   "last_ts": 1795747463.248863
+   "last_mcap": 10828.0,
+   "last_ts": 1795795849.638061
   },
   "Loopier|7S6HGeZs3eNXQunVfiz9tceeuMPuSVLGFJ7BSwBApump": {
    "kol": "Loopier",
@@ -339,8 +330,8 @@
    "entry_mcap": 107240.0,
    "entry_ts": 1792667503.26352,
    "peak_mcap": 156325.0,
-   "last_mcap": 0.0,
-   "last_ts": 1795747463.248864
+   "last_mcap": 2073.0,
+   "last_ts": 1795795849.638062
   },
   "Solcrow|55A3VxMBfzw6uSe64zms5iMPw9k6kx9WzzusbCU6pump": {
    "kol": "Solcrow",
@@ -348,8 +339,8 @@
    "entry_mcap": 330898.0,
    "entry_ts": 1792667503.263532,
    "peak_mcap": 330898.0,
-   "last_mcap": 28903.0,
-   "last_ts": 1795747463.248865
+   "last_mcap": 28233.0,
+   "last_ts": 1795795849.638063
   },
   "Solcrow|6mYfg1EmMVjbQv38QGY5XdRUQ4SyNpFauL1aiRiWpump": {
    "kol": "Solcrow",
@@ -357,8 +348,8 @@
    "entry_mcap": 104795.0,
    "entry_ts": 1792710371.82924,
    "peak_mcap": 159985.0,
-   "last_mcap": 0.0,
-   "last_ts": 1795747463.248866
+   "last_mcap": 3494.0,
+   "last_ts": 1795795849.638064
   },
   "OGAntD|FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump": {
    "kol": "OGAntD",
@@ -367,7 +358,7 @@
    "entry_ts": 1792753382.613181,
    "peak_mcap": 105650.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248867
+   "last_ts": 1795795849.638065
   },
   "Cooker|5UHeHyfB4fo7sy4hHN9gGBJvYSQdz7w6ienZoSTDpump": {
    "kol": "Cooker",
@@ -376,7 +367,7 @@
    "entry_ts": 1792753382.613191,
    "peak_mcap": 62822.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248867
+   "last_ts": 1795795849.638066
   },
   "Loopier|2TKDNLwVTbhVVy7jCvSDz6ic4REAqQshZ9n9ZTxmpump": {
    "kol": "Loopier",
@@ -384,8 +375,8 @@
    "entry_mcap": 1243502.0,
    "entry_ts": 1792796391.775705,
    "peak_mcap": 1243502.0,
-   "last_mcap": 11358.0,
-   "last_ts": 1795747463.248868
+   "last_mcap": 11410.0,
+   "last_ts": 1795795849.638066
   },
   "Cooker|2TKDNLwVTbhVVy7jCvSDz6ic4REAqQshZ9n9ZTxmpump": {
    "kol": "Cooker",
@@ -393,8 +384,8 @@
    "entry_mcap": 1243502.0,
    "entry_ts": 1792796391.775715,
    "peak_mcap": 1243502.0,
-   "last_mcap": 11358.0,
-   "last_ts": 1795747463.248869
+   "last_mcap": 11410.0,
+   "last_ts": 1795795849.638067
   },
   "Ansem|EwX2T1p2PmgTsSq2Bi6XtQYxPC5krR4P2fxPfN4Qpump": {
    "kol": "Ansem",
@@ -402,8 +393,8 @@
    "entry_mcap": 585567.0,
    "entry_ts": 1792880418.649967,
    "peak_mcap": 1420535.0,
-   "last_mcap": 47030.0,
-   "last_ts": 1795747463.24887
+   "last_mcap": 62485.0,
+   "last_ts": 1795795849.638068
   },
   "Cooker|EwX2T1p2PmgTsSq2Bi6XtQYxPC5krR4P2fxPfN4Qpump": {
    "kol": "Cooker",
@@ -411,8 +402,8 @@
    "entry_mcap": 585567.0,
    "entry_ts": 1792880418.649976,
    "peak_mcap": 1420535.0,
-   "last_mcap": 47030.0,
-   "last_ts": 1795747463.248871
+   "last_mcap": 62485.0,
+   "last_ts": 1795795849.638069
   },
   "Dior|FmuciqKXRRnKqhi7BNin5mYH6fm3oTrfVB5A5Fyrpump": {
    "kol": "Dior",
@@ -420,8 +411,8 @@
    "entry_mcap": 146031.0,
    "entry_ts": 1792925147.668081,
    "peak_mcap": 157272.0,
-   "last_mcap": 4385.0,
-   "last_ts": 1795747463.248872
+   "last_mcap": 4551.0,
+   "last_ts": 1795795849.63807
   },
   "Zrool|oreoU2P8bN6jkk3jbaiVxYnG1dCXcYxwhwyK9jSybcp": {
    "kol": "Zrool",
@@ -429,8 +420,8 @@
    "entry_mcap": 45833292.0,
    "entry_ts": 1792925147.668092,
    "peak_mcap": 65282079.0,
-   "last_mcap": 42939455.0,
-   "last_ts": 1795747463.248872
+   "last_mcap": 21880777.0,
+   "last_ts": 1795795849.63807
   },
   "Gasp|oreoU2P8bN6jkk3jbaiVxYnG1dCXcYxwhwyK9jSybcp": {
    "kol": "Gasp",
@@ -438,8 +429,8 @@
    "entry_mcap": 45833292.0,
    "entry_ts": 1792925147.668094,
    "peak_mcap": 65282079.0,
-   "last_mcap": 42939455.0,
-   "last_ts": 1795747463.248873
+   "last_mcap": 21880777.0,
+   "last_ts": 1795795849.638071
   },
   "Zef|oreoU2P8bN6jkk3jbaiVxYnG1dCXcYxwhwyK9jSybcp": {
    "kol": "Zef",
@@ -447,8 +438,8 @@
    "entry_mcap": 45833292.0,
    "entry_ts": 1792925147.668095,
    "peak_mcap": 65282079.0,
-   "last_mcap": 42939455.0,
-   "last_ts": 1795747463.248874
+   "last_mcap": 21880777.0,
+   "last_ts": 1795795849.638072
   },
   "Zrool|SATqS9DYpLQsM2z51P4QCoqJRHa5wboV4qjJerJRUSH": {
    "kol": "Zrool",
@@ -456,8 +447,8 @@
    "entry_mcap": 2805216.0,
    "entry_ts": 1792967079.218116,
    "peak_mcap": 3016081.0,
-   "last_mcap": 2201814.0,
-   "last_ts": 1795747463.248875
+   "last_mcap": 2246039.0,
+   "last_ts": 1795795849.638073
   },
   "Gasp|SATqS9DYpLQsM2z51P4QCoqJRHa5wboV4qjJerJRUSH": {
    "kol": "Gasp",
@@ -465,8 +456,8 @@
    "entry_mcap": 2805216.0,
    "entry_ts": 1792967079.218126,
    "peak_mcap": 3016081.0,
-   "last_mcap": 2201814.0,
-   "last_ts": 1795747463.248875
+   "last_mcap": 2246039.0,
+   "last_ts": 1795795849.638074
   },
   "LeykoFR|SATqS9DYpLQsM2z51P4QCoqJRHa5wboV4qjJerJRUSH": {
    "kol": "LeykoFR",
@@ -474,8 +465,8 @@
    "entry_mcap": 2805216.0,
    "entry_ts": 1792967079.218128,
    "peak_mcap": 3016081.0,
-   "last_mcap": 2201814.0,
-   "last_ts": 1795747463.248876
+   "last_mcap": 2246039.0,
+   "last_ts": 1795795849.638075
   },
   "Felix|AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C": {
    "kol": "Felix",
@@ -483,8 +474,8 @@
    "entry_mcap": 2288310.0,
    "entry_ts": 1793017073.084579,
    "peak_mcap": 2838267.0,
-   "last_mcap": 7221.0,
-   "last_ts": 1795747463.248876
+   "last_mcap": 7123.0,
+   "last_ts": 1795795849.638075
   },
   "Yugi|AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C": {
    "kol": "Yugi",
@@ -492,8 +483,8 @@
    "entry_mcap": 2288310.0,
    "entry_ts": 1793017073.08459,
    "peak_mcap": 2838267.0,
-   "last_mcap": 7221.0,
-   "last_ts": 1795747463.248877
+   "last_mcap": 7123.0,
+   "last_ts": 1795795849.638076
   },
   "Zef|AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C": {
    "kol": "Zef",
@@ -501,8 +492,8 @@
    "entry_mcap": 2288310.0,
    "entry_ts": 1793017073.084592,
    "peak_mcap": 2838267.0,
-   "last_mcap": 7221.0,
-   "last_ts": 1795747463.248878
+   "last_mcap": 7123.0,
+   "last_ts": 1795795849.638077
   },
   "Dior|8BnNS15Q6h6D5Vcq1sNPaUxhpRVdK8FGRbLvCrLxibSx": {
    "kol": "Dior",
@@ -510,8 +501,8 @@
    "entry_mcap": 382782.0,
    "entry_ts": 1793058058.720687,
    "peak_mcap": 541065.0,
-   "last_mcap": 18740.0,
-   "last_ts": 1795747463.248878
+   "last_mcap": 18506.0,
+   "last_ts": 1795795849.638078
   },
   "Giann|AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C": {
    "kol": "Giann",
@@ -519,8 +510,8 @@
    "entry_mcap": 1908752.0,
    "entry_ts": 1793058058.720698,
    "peak_mcap": 2838267.0,
-   "last_mcap": 7221.0,
-   "last_ts": 1795747463.248879
+   "last_mcap": 7123.0,
+   "last_ts": 1795795849.638078
   },
   "Dior|DMnMwUvo1a9HbSnixbdNaTsoHczJ8cdamUWVRM1Qpump": {
    "kol": "Dior",
@@ -528,8 +519,8 @@
    "entry_mcap": 236038.0,
    "entry_ts": 1793101118.657273,
    "peak_mcap": 258434.0,
-   "last_mcap": 3762.0,
-   "last_ts": 1795747463.24888
+   "last_mcap": 3547.0,
+   "last_ts": 1795795849.638079
   },
   "Dior|2BJDwUdMbnJhRRfhacFDjrDNhxUWdzE9H6LEND89pump": {
    "kol": "Dior",
@@ -537,8 +528,8 @@
    "entry_mcap": 228763.0,
    "entry_ts": 1793144424.8351,
    "peak_mcap": 234944.0,
-   "last_mcap": 11708.0,
-   "last_ts": 1795747463.248881
+   "last_mcap": 11999.0,
+   "last_ts": 1795795849.63808
   },
   "Gake|Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump": {
    "kol": "Gake",
@@ -546,8 +537,8 @@
    "entry_mcap": 475821.0,
    "entry_ts": 1793231858.511011,
    "peak_mcap": 1084142.0,
-   "last_mcap": 340161.0,
-   "last_ts": 1795747463.248881
+   "last_mcap": 256322.0,
+   "last_ts": 1795795849.638081
   },
   "OGAntD|HAsTKXYvv65zM7J6Cu5o5PcZsiKMQYo5oz4WPjgqwP6k": {
    "kol": "OGAntD",
@@ -555,8 +546,8 @@
    "entry_mcap": 1138743.0,
    "entry_ts": 1793231858.511021,
    "peak_mcap": 3035034.0,
-   "last_mcap": 24005.0,
-   "last_ts": 1795747463.248882
+   "last_mcap": 24234.0,
+   "last_ts": 1795795849.638082
   },
   "Cooker|Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr": {
    "kol": "Cooker",
@@ -564,8 +555,8 @@
    "entry_mcap": 1418760.0,
    "entry_ts": 1793231858.511025,
    "peak_mcap": 14576403.0,
-   "last_mcap": 3381190.0,
-   "last_ts": 1795747463.248883
+   "last_mcap": 2931964.0,
+   "last_ts": 1795795849.638083
   },
   "OGAntD|677RzFgXjLpApyHAtzjd9sTjiJNGCxrRVvYb1TwWp5qJ": {
    "kol": "OGAntD",
@@ -574,7 +565,7 @@
    "entry_ts": 1793276425.605274,
    "peak_mcap": 63163.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248883
+   "last_ts": 1795795849.638084
   },
   "Solcrow|677RzFgXjLpApyHAtzjd9sTjiJNGCxrRVvYb1TwWp5qJ": {
    "kol": "Solcrow",
@@ -583,7 +574,7 @@
    "entry_ts": 1793276425.605283,
    "peak_mcap": 63163.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248884
+   "last_ts": 1795795849.638085
   },
   "Mitch|98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g": {
    "kol": "Mitch",
@@ -591,8 +582,8 @@
    "entry_mcap": 98956.0,
    "entry_ts": 1793317963.853137,
    "peak_mcap": 252319802023.0,
-   "last_mcap": 46841996.0,
-   "last_ts": 1795747463.248884
+   "last_mcap": 46365799.0,
+   "last_ts": 1795795849.638086
   },
   "Solcrow|98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g": {
    "kol": "Solcrow",
@@ -600,8 +591,8 @@
    "entry_mcap": 98956.0,
    "entry_ts": 1793317963.853147,
    "peak_mcap": 252319802023.0,
-   "last_mcap": 46841996.0,
-   "last_ts": 1795747463.248885
+   "last_mcap": 46365799.0,
+   "last_ts": 1795795849.638086
   },
   "Argan|98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g": {
    "kol": "Argan",
@@ -609,8 +600,8 @@
    "entry_mcap": 98956.0,
    "entry_ts": 1793317963.853149,
    "peak_mcap": 252319802023.0,
-   "last_mcap": 46841996.0,
-   "last_ts": 1795747463.248886
+   "last_mcap": 46365799.0,
+   "last_ts": 1795795849.638087
   },
   "Loopier|6d9fD5SxvN4DAG4SHQD8pebm8TM6XeSbYezPDjdapump": {
    "kol": "Loopier",
@@ -618,8 +609,8 @@
    "entry_mcap": 56230.0,
    "entry_ts": 1793317963.853156,
    "peak_mcap": 535081.0,
-   "last_mcap": 407867.0,
-   "last_ts": 1795747463.248887
+   "last_mcap": 407351.0,
+   "last_ts": 1795795849.638088
   },
   "Bronskee|4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz": {
    "kol": "Bronskee",
@@ -627,8 +618,8 @@
    "entry_mcap": 12012587.0,
    "entry_ts": 1793317963.85316,
    "peak_mcap": 18613178.0,
-   "last_mcap": 1910978.0,
-   "last_ts": 1795747463.248887
+   "last_mcap": 1847866.0,
+   "last_ts": 1795795849.638089
   },
   "Putrick|4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz": {
    "kol": "Putrick",
@@ -636,8 +627,8 @@
    "entry_mcap": 12012587.0,
    "entry_ts": 1793317963.853162,
    "peak_mcap": 18613178.0,
-   "last_mcap": 1910978.0,
-   "last_ts": 1795747463.248888
+   "last_mcap": 1847866.0,
+   "last_ts": 1795795849.638089
   },
   "Argan|4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz": {
    "kol": "Argan",
@@ -645,8 +636,8 @@
    "entry_mcap": 12012587.0,
    "entry_ts": 1793317963.853164,
    "peak_mcap": 18613178.0,
-   "last_mcap": 1910978.0,
-   "last_ts": 1795747463.248889
+   "last_mcap": 1847866.0,
+   "last_ts": 1795795849.63809
   },
   "Mitch|Jy8kKwumNBdg3VtpvkzKh22kLQSw57Zr8sfdSSjpump": {
    "kol": "Mitch",
@@ -655,7 +646,7 @@
    "entry_ts": 1793488390.107222,
    "peak_mcap": 10516552.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248889
+   "last_ts": 1795795849.638091
   },
   "Dior|Jy8kKwumNBdg3VtpvkzKh22kLQSw57Zr8sfdSSjpump": {
    "kol": "Dior",
@@ -664,7 +655,7 @@
    "entry_ts": 1793488390.107233,
    "peak_mcap": 10516552.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.24889
+   "last_ts": 1795795849.638092
   },
   "Cooker|8pjfN5Ayb4rucGpYE3tZWN6v3EysizjPx1v62zx1pump": {
    "kol": "Cooker",
@@ -672,8 +663,8 @@
    "entry_mcap": 342327.0,
    "entry_ts": 1793488390.107238,
    "peak_mcap": 376462.0,
-   "last_mcap": 6234.0,
-   "last_ts": 1795747463.248891
+   "last_mcap": 6292.0,
+   "last_ts": 1795795849.638093
   },
   "Solcrow|Ewyifvp8X9NxeaKawXamGXBFDisuMfcFfcdvSZ8opump": {
    "kol": "Solcrow",
@@ -682,7 +673,7 @@
    "entry_ts": 1793488390.10724,
    "peak_mcap": 69099.0,
    "last_mcap": 2169.0,
-   "last_ts": 1795747463.248891
+   "last_ts": 1795795849.638093
   },
   "LeykoFR|4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz": {
    "kol": "LeykoFR",
@@ -690,8 +681,8 @@
    "entry_mcap": 12524760.0,
    "entry_ts": 1793575647.563317,
    "peak_mcap": 18613178.0,
-   "last_mcap": 1910978.0,
-   "last_ts": 1795747463.248892
+   "last_mcap": 1847866.0,
+   "last_ts": 1795795849.638094
   },
   "Dior|BngAfLZxaWN2QvpFhRbUHydYGr8zA7YTSA178G8Epump": {
    "kol": "Dior",
@@ -699,8 +690,8 @@
    "entry_mcap": 253923.0,
    "entry_ts": 1793630869.250257,
    "peak_mcap": 260204.0,
-   "last_mcap": 6847.0,
-   "last_ts": 1795747463.248893
+   "last_mcap": 6245.0,
+   "last_ts": 1795795849.638095
   },
   "Solcrow|DTVcrMAEMwpSSBvu6W7P3BLZsRhFZb6bSzARFDqobfCT": {
    "kol": "Solcrow",
@@ -708,8 +699,8 @@
    "entry_mcap": 53702.0,
    "entry_ts": 1793630869.25027,
    "peak_mcap": 196193.0,
-   "last_mcap": 3109.0,
-   "last_ts": 1795747463.248894
+   "last_mcap": 0.0,
+   "last_ts": 1795795849.638096
   },
   "Loopier|5DnWmSL9t3YqK5MeYq8ozJpna46VcdePWzHvyN8avg2g": {
    "kol": "Loopier",
@@ -717,8 +708,8 @@
    "entry_mcap": 243832.0,
    "entry_ts": 1793713223.159405,
    "peak_mcap": 247308.0,
-   "last_mcap": 6817.0,
-   "last_ts": 1795747463.248895
+   "last_mcap": 6632.0,
+   "last_ts": 1795795849.638096
   },
   "OGAntD|5DnWmSL9t3YqK5MeYq8ozJpna46VcdePWzHvyN8avg2g": {
    "kol": "OGAntD",
@@ -726,8 +717,8 @@
    "entry_mcap": 243832.0,
    "entry_ts": 1793713223.159414,
    "peak_mcap": 247308.0,
-   "last_mcap": 6817.0,
-   "last_ts": 1795747463.248895
+   "last_mcap": 6632.0,
+   "last_ts": 1795795849.638097
   },
   "Mitch|DDmGnuvroxVrb7CSyjYcezFU8gnAfhKasg4ZZezmpump": {
    "kol": "Mitch",
@@ -735,8 +726,8 @@
    "entry_mcap": 1856016.0,
    "entry_ts": 1793752247.812107,
    "peak_mcap": 1870019.0,
-   "last_mcap": 165186.0,
-   "last_ts": 1795747463.248896
+   "last_mcap": 141898.0,
+   "last_ts": 1795795849.638098
   },
   "OGAntD|DDmGnuvroxVrb7CSyjYcezFU8gnAfhKasg4ZZezmpump": {
    "kol": "OGAntD",
@@ -744,8 +735,8 @@
    "entry_mcap": 1856016.0,
    "entry_ts": 1793752247.812116,
    "peak_mcap": 1870019.0,
-   "last_mcap": 165186.0,
-   "last_ts": 1795747463.248897
+   "last_mcap": 141898.0,
+   "last_ts": 1795795849.638099
   },
   "LatucheFR|DDmGnuvroxVrb7CSyjYcezFU8gnAfhKasg4ZZezmpump": {
    "kol": "LatucheFR",
@@ -753,8 +744,8 @@
    "entry_mcap": 1856016.0,
    "entry_ts": 1793752247.812117,
    "peak_mcap": 1870019.0,
-   "last_mcap": 165186.0,
-   "last_ts": 1795747463.248898
+   "last_mcap": 141898.0,
+   "last_ts": 1795795849.6381
   },
   "OGAntD|AxPzkSJKU3ACqZu7qpq8ov29g4BENZBM4SAZwUUUFo8M": {
    "kol": "OGAntD",
@@ -762,8 +753,8 @@
    "entry_mcap": 88176.0,
    "entry_ts": 1793752247.812122,
    "peak_mcap": 103003.0,
-   "last_mcap": 4051.0,
-   "last_ts": 1795747463.248899
+   "last_mcap": 4006.0,
+   "last_ts": 1795795849.638101
   },
   "Solcrow|6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx": {
    "kol": "Solcrow",
@@ -771,8 +762,8 @@
    "entry_mcap": 118903673.0,
    "entry_ts": 1793752247.812125,
    "peak_mcap": 127112269.0,
-   "last_mcap": 31963277.0,
-   "last_ts": 1795747463.2489
+   "last_mcap": 33223900.0,
+   "last_ts": 1795795849.638102
   },
   "Gasp|6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx": {
    "kol": "Gasp",
@@ -780,8 +771,8 @@
    "entry_mcap": 118903673.0,
    "entry_ts": 1793752247.812127,
    "peak_mcap": 127112269.0,
-   "last_mcap": 31963277.0,
-   "last_ts": 1795747463.248901
+   "last_mcap": 33223900.0,
+   "last_ts": 1795795849.638102
   },
   "LeykoFR|6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx": {
    "kol": "LeykoFR",
@@ -789,8 +780,8 @@
    "entry_mcap": 118903673.0,
    "entry_ts": 1793752247.812129,
    "peak_mcap": 127112269.0,
-   "last_mcap": 31963277.0,
-   "last_ts": 1795747463.248902
+   "last_mcap": 33223900.0,
+   "last_ts": 1795795849.638103
   },
   "Giann|6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx": {
    "kol": "Giann",
@@ -798,8 +789,8 @@
    "entry_mcap": 118903673.0,
    "entry_ts": 1793752247.81213,
    "peak_mcap": 127112269.0,
-   "last_mcap": 31963277.0,
-   "last_ts": 1795747463.248903
+   "last_mcap": 33223900.0,
+   "last_ts": 1795795849.638104
   },
   "Dior|DDmGnuvroxVrb7CSyjYcezFU8gnAfhKasg4ZZezmpump": {
    "kol": "Dior",
@@ -807,8 +798,8 @@
    "entry_mcap": 1465509.0,
    "entry_ts": 1793800135.042045,
    "peak_mcap": 1465509.0,
-   "last_mcap": 165186.0,
-   "last_ts": 1795747463.248903
+   "last_mcap": 141898.0,
+   "last_ts": 1795795849.638105
   },
   "Dior|6QUHcqYuiPRHxhnYZoygewXtNQr9kUrhc9Tmwgtbpump": {
    "kol": "Dior",
@@ -816,8 +807,8 @@
    "entry_mcap": 470290.0,
    "entry_ts": 1793800135.042057,
    "peak_mcap": 489237.0,
-   "last_mcap": 12574.0,
-   "last_ts": 1795747463.248904
+   "last_mcap": 11157.0,
+   "last_ts": 1795795849.638106
   },
   "Ethan|APLPiTjBWzwfZ5U1TBeqLF9XJ7dV7XKGe7j4BZhkDray": {
    "kol": "Ethan",
@@ -825,8 +816,8 @@
    "entry_mcap": 935500.0,
    "entry_ts": 1793887287.412529,
    "peak_mcap": 935500.0,
-   "last_mcap": 160413.0,
-   "last_ts": 1795747463.248905
+   "last_mcap": 157723.0,
+   "last_ts": 1795795849.638106
   },
   "Zef|APLPiTjBWzwfZ5U1TBeqLF9XJ7dV7XKGe7j4BZhkDray": {
    "kol": "Zef",
@@ -834,8 +825,8 @@
    "entry_mcap": 935500.0,
    "entry_ts": 1793887287.412539,
    "peak_mcap": 935500.0,
-   "last_mcap": 160413.0,
-   "last_ts": 1795747463.248906
+   "last_mcap": 157723.0,
+   "last_ts": 1795795849.638107
   },
   "Cooker|Hbpjmu51QXzwojmtvnzzFtwpgYdP8SUwxTTDACGxpump": {
    "kol": "Cooker",
@@ -843,8 +834,8 @@
    "entry_mcap": 176156.0,
    "entry_ts": 1793887287.412544,
    "peak_mcap": 181324.0,
-   "last_mcap": 8251.0,
-   "last_ts": 1795747463.248906
+   "last_mcap": 7242.0,
+   "last_ts": 1795795849.638108
   },
   "OGAntD|BQjiYCutv9LVtbgj7pKCN2Ce6k2eUM5RSKs6kDAzpump": {
    "kol": "OGAntD",
@@ -852,8 +843,8 @@
    "entry_mcap": 150775.0,
    "entry_ts": 1793926562.833195,
    "peak_mcap": 150775.0,
-   "last_mcap": 6672.0,
-   "last_ts": 1795747463.248907
+   "last_mcap": 6689.0,
+   "last_ts": 1795795849.638109
   },
   "Euris|EW1b9rcLAJe634mgxb5r4bVYxDoGU37o7YazBzjTpump": {
    "kol": "Euris",
@@ -861,8 +852,8 @@
    "entry_mcap": 76081.0,
    "entry_ts": 1793972791.820964,
    "peak_mcap": 79032.0,
-   "last_mcap": 4814.0,
-   "last_ts": 1795747463.248908
+   "last_mcap": 5094.0,
+   "last_ts": 1795795849.638109
   },
   "Cooker|7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump": {
    "kol": "Cooker",
@@ -870,8 +861,8 @@
    "entry_mcap": 1344896.0,
    "entry_ts": 1794009714.632003,
    "peak_mcap": 2210383.0,
-   "last_mcap": 958379.0,
-   "last_ts": 1795747463.248908
+   "last_mcap": 934239.0,
+   "last_ts": 1795795849.63811
   },
   "Cooker|BdouwEr3mwXkT6S6EmHNCjn9oEtykRKCKiUSTRF9pump": {
    "kol": "Cooker",
@@ -879,8 +870,8 @@
    "entry_mcap": 218417.0,
    "entry_ts": 1794054613.658213,
    "peak_mcap": 218417.0,
-   "last_mcap": 7320.0,
-   "last_ts": 1795747463.248909
+   "last_mcap": 11203.0,
+   "last_ts": 1795795849.638111
   },
   "Dior|87CQtouHSb6YCXaPZ1pp8jD56VudRMXBVqU3oDMD1UJT": {
    "kol": "Dior",
@@ -888,8 +879,8 @@
    "entry_mcap": 663893.0,
    "entry_ts": 1794142081.956017,
    "peak_mcap": 663893.0,
-   "last_mcap": 29402.0,
-   "last_ts": 1795747463.248909
+   "last_mcap": 26939.0,
+   "last_ts": 1795795849.638111
   },
   "Zrool|Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr": {
    "kol": "Zrool",
@@ -897,8 +888,8 @@
    "entry_mcap": 14138615.0,
    "entry_ts": 1794142081.956031,
    "peak_mcap": 14576403.0,
-   "last_mcap": 3381190.0,
-   "last_ts": 1795747463.24891
+   "last_mcap": 2931964.0,
+   "last_ts": 1795795849.638112
   },
   "Smokez|Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr": {
    "kol": "Smokez",
@@ -906,8 +897,8 @@
    "entry_mcap": 14138615.0,
    "entry_ts": 1794142081.956033,
    "peak_mcap": 14576403.0,
-   "last_mcap": 3381190.0,
-   "last_ts": 1795747463.24891
+   "last_mcap": 2931964.0,
+   "last_ts": 1795795849.638113
   },
   "Putrick|Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr": {
    "kol": "Putrick",
@@ -915,8 +906,8 @@
    "entry_mcap": 14673923.0,
    "entry_ts": 1794180702.586534,
    "peak_mcap": 14673923.0,
-   "last_mcap": 3381190.0,
-   "last_ts": 1795747463.248911
+   "last_mcap": 2931964.0,
+   "last_ts": 1795795849.638114
   },
   "OGAntD|FNxVZo25dGerP4Tw49f4aHg9xac5qw1FER9F7EzK9cTs": {
    "kol": "OGAntD",
@@ -924,8 +915,8 @@
    "entry_mcap": 100359.0,
    "entry_ts": 1794278289.412697,
    "peak_mcap": 710708.0,
-   "last_mcap": 86423.0,
-   "last_ts": 1795747463.248912
+   "last_mcap": 68521.0,
+   "last_ts": 1795795849.638114
   },
   "Dior|6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump": {
    "kol": "Dior",
@@ -933,8 +924,8 @@
    "entry_mcap": 391360.0,
    "entry_ts": 1794320550.325544,
    "peak_mcap": 407516.0,
-   "last_mcap": 13296.0,
-   "last_ts": 1795747463.248912
+   "last_mcap": 15023.0,
+   "last_ts": 1795795849.638115
   },
   "Solcrow|9S1DYY1wKRuETUfQ88pDtpxrKf5CsEJcYompw2CRApad": {
    "kol": "Solcrow",
@@ -942,8 +933,8 @@
    "entry_mcap": 87042.0,
    "entry_ts": 1794320550.325559,
    "peak_mcap": 87042.0,
-   "last_mcap": 5278.0,
-   "last_ts": 1795747463.248913
+   "last_mcap": 5044.0,
+   "last_ts": 1795795849.638116
   },
   "Ethan|4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump": {
    "kol": "Ethan",
@@ -951,8 +942,8 @@
    "entry_mcap": 17180028.0,
    "entry_ts": 1794448350.578569,
    "peak_mcap": 17738269.0,
-   "last_mcap": 5358214.0,
-   "last_ts": 1795747463.248914
+   "last_mcap": 5332157.0,
+   "last_ts": 1795795849.638116
   },
   "Cooker|5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump": {
    "kol": "Cooker",
@@ -960,8 +951,8 @@
    "entry_mcap": 3509952.0,
    "entry_ts": 1794448350.578578,
    "peak_mcap": 3509952.0,
-   "last_mcap": 415429.0,
-   "last_ts": 1795747463.248915
+   "last_mcap": 436042.0,
+   "last_ts": 1795795849.638117
   },
   "LatucheFR|5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump": {
    "kol": "LatucheFR",
@@ -969,8 +960,8 @@
    "entry_mcap": 3509952.0,
    "entry_ts": 1794448350.57858,
    "peak_mcap": 3509952.0,
-   "last_mcap": 415429.0,
-   "last_ts": 1795747463.248916
+   "last_mcap": 436042.0,
+   "last_ts": 1795795849.638118
   },
   "Loopier|52jLwRnUxGrSGPu65aGMgKrWdpMDFmyR3Gyf3sivpump": {
    "kol": "Loopier",
@@ -979,7 +970,7 @@
    "entry_ts": 1794578286.052657,
    "peak_mcap": 62286.0,
    "last_mcap": 0.0,
-   "last_ts": 1795747463.248916
+   "last_ts": 1795795849.638119
   },
   "LatucheFR|EcCpMnjc3wJQrCKSsyrzyJiXRwY6AZPLzSaWR2bPpump": {
    "kol": "LatucheFR",
@@ -987,8 +978,8 @@
    "entry_mcap": 84814.0,
    "entry_ts": 1794661205.844969,
    "peak_mcap": 84814.0,
-   "last_mcap": 4115.0,
-   "last_ts": 1795747463.248917
+   "last_mcap": 3972.0,
+   "last_ts": 1795795849.638119
   },
   "Ansem|4B8CdHPZ8ng1CtMP2Jk2W8wGAwJ5nJnap1deVsz2pump": {
    "kol": "Ansem",
@@ -996,8 +987,8 @@
    "entry_mcap": 619054.0,
    "entry_ts": 1794840594.554384,
    "peak_mcap": 636150.0,
-   "last_mcap": 18929.0,
-   "last_ts": 1795747463.248918
+   "last_mcap": 20306.0,
+   "last_ts": 1795795849.63812
   },
   "Loopier|4B8CdHPZ8ng1CtMP2Jk2W8wGAwJ5nJnap1deVsz2pump": {
    "kol": "Loopier",
@@ -1005,8 +996,8 @@
    "entry_mcap": 619054.0,
    "entry_ts": 1794840594.554395,
    "peak_mcap": 636150.0,
-   "last_mcap": 18929.0,
-   "last_ts": 1795747463.248918
+   "last_mcap": 20306.0,
+   "last_ts": 1795795849.638121
   },
   "Dior|HkRQ6Qcadi5yuoNpZdA1Q7yVF3r7LdEmAw1aKkSxpump": {
    "kol": "Dior",
@@ -1014,8 +1005,8 @@
    "entry_mcap": 308197.0,
    "entry_ts": 1794840594.5544,
    "peak_mcap": 367603.0,
-   "last_mcap": 105202.0,
-   "last_ts": 1795747463.248919
+   "last_mcap": 97834.0,
+   "last_ts": 1795795849.638121
   },
   "Cooker|HkRQ6Qcadi5yuoNpZdA1Q7yVF3r7LdEmAw1aKkSxpump": {
    "kol": "Cooker",
@@ -1023,8 +1014,8 @@
    "entry_mcap": 308197.0,
    "entry_ts": 1794840594.554402,
    "peak_mcap": 367603.0,
-   "last_mcap": 105202.0,
-   "last_ts": 1795747463.24892
+   "last_mcap": 97834.0,
+   "last_ts": 1795795849.638122
   },
   "Solcrow|GYZ3toP3xAc7xgHfnGBc419ksvtX1w8oP6Tc2bVupump": {
    "kol": "Solcrow",
@@ -1032,8 +1023,8 @@
    "entry_mcap": 299131.0,
    "entry_ts": 1794929521.502342,
    "peak_mcap": 299131.0,
-   "last_mcap": 5550.0,
-   "last_ts": 1795747463.248921
+   "last_mcap": 5592.0,
+   "last_ts": 1795795849.638123
   },
   "Solcrow|A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS": {
    "kol": "Solcrow",
@@ -1041,8 +1032,8 @@
    "entry_mcap": 23525.0,
    "entry_ts": 1794929521.502355,
    "peak_mcap": 23525.0,
-   "last_mcap": 18338.0,
-   "last_ts": 1795747463.248921
+   "last_mcap": 18287.0,
+   "last_ts": 1795795849.638124
   },
   "Ozark|A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS": {
    "kol": "Ozark",
@@ -1050,8 +1041,8 @@
    "entry_mcap": 23525.0,
    "entry_ts": 1794929521.502357,
    "peak_mcap": 23525.0,
-   "last_mcap": 18338.0,
-   "last_ts": 1795747463.248922
+   "last_mcap": 18287.0,
+   "last_ts": 1795795849.638125
   },
   "Solcrow|BjFcaSPgxVmeX8RtmT4suLqDoRpB9smHtg7aRBJagpad": {
    "kol": "Solcrow",
@@ -1059,8 +1050,8 @@
    "entry_mcap": 254248.0,
    "entry_ts": 1794929521.502358,
    "peak_mcap": 254248.0,
-   "last_mcap": 10671.0,
-   "last_ts": 1795747463.248923
+   "last_mcap": 11702.0,
+   "last_ts": 1795795849.638125
   },
   "Cooker|8HXsCMy8ma8QP2yVZXG5SZYyaTZw5AUrUDha1G4upump": {
    "kol": "Cooker",
@@ -1068,8 +1059,8 @@
    "entry_mcap": 154631.0,
    "entry_ts": 1795052909.808629,
    "peak_mcap": 324950.0,
-   "last_mcap": 10220.0,
-   "last_ts": 1795747463.248923
+   "last_mcap": 8731.0,
+   "last_ts": 1795795849.638126
   },
   "Bronskee|FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump": {
    "kol": "Bronskee",
@@ -1077,8 +1068,8 @@
    "entry_mcap": 1213069.0,
    "entry_ts": 1795052909.80864,
    "peak_mcap": 1254283.0,
-   "last_mcap": 458058.0,
-   "last_ts": 1795747463.248924
+   "last_mcap": 402251.0,
+   "last_ts": 1795795849.638127
   },
   "Dior|GRMRQSkBGg2Cc8Y9GePNBcJVk49YepWkXUDQBXAMpump": {
    "kol": "Dior",
@@ -1086,8 +1077,8 @@
    "entry_mcap": 124439.0,
    "entry_ts": 1795186537.462102,
    "peak_mcap": 127068.0,
-   "last_mcap": 6705.0,
-   "last_ts": 1795747463.248924
+   "last_mcap": 6868.0,
+   "last_ts": 1795795849.638128
   },
   "Cooker|8mnJZnxaNLqVwkaWWGH7dKmoEzyYzGJx5pHaCp7spump": {
    "kol": "Cooker",
@@ -1095,8 +1086,8 @@
    "entry_mcap": 152678.0,
    "entry_ts": 1795223630.16909,
    "peak_mcap": 152678.0,
-   "last_mcap": 46863.0,
-   "last_ts": 1795747463.248925
+   "last_mcap": 27977.0,
+   "last_ts": 1795795849.638129
   },
   "Cooker|FuKY3dk7QmpbDdQRjzbjB3G6PiCuqKNvN4dAWDpwpump": {
    "kol": "Cooker",
@@ -1104,8 +1095,8 @@
    "entry_mcap": 249300.0,
    "entry_ts": 1795394416.15199,
    "peak_mcap": 262360.0,
-   "last_mcap": 18421.0,
-   "last_ts": 1795747463.248926
+   "last_mcap": 27092.0,
+   "last_ts": 1795795849.63813
   },
   "Zrool|3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f": {
    "kol": "Zrool",
@@ -1113,8 +1104,8 @@
    "entry_mcap": 1297232.0,
    "entry_ts": 1795625387.202278,
    "peak_mcap": 1297232.0,
-   "last_mcap": 442159.0,
-   "last_ts": 1795747463.248927
+   "last_mcap": 374121.0,
+   "last_ts": 1795795849.638131
   },
   "Loopier|5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump": {
    "kol": "Loopier",
@@ -1122,8 +1113,8 @@
    "entry_mcap": 294438.0,
    "entry_ts": 1795625387.202289,
    "peak_mcap": 299479.0,
-   "last_mcap": 37410.0,
-   "last_ts": 1795747463.248927
+   "last_mcap": 24422.0,
+   "last_ts": 1795795849.638131
   },
   "Solcrow|38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump": {
    "kol": "Solcrow",
@@ -1131,8 +1122,8 @@
    "entry_mcap": 1244574.0,
    "entry_ts": 1795625387.202293,
    "peak_mcap": 1244574.0,
-   "last_mcap": 544912.0,
-   "last_ts": 1795747463.248928
+   "last_mcap": 475384.0,
+   "last_ts": 1795795849.638132
   },
   "Gasp|CUg7AzWL5p8imZVqqdjEPgRhUsXAkBMW5JxkSJ9fpump": {
    "kol": "Gasp",
@@ -1140,8 +1131,8 @@
    "entry_mcap": 648857.0,
    "entry_ts": 1795625387.202295,
    "peak_mcap": 764397.0,
-   "last_mcap": 722435.0,
-   "last_ts": 1795747463.248929
+   "last_mcap": 634810.0,
+   "last_ts": 1795795849.638133
   },
   "Dior|32rBxcFjCFnyqZ41CEPM5AL67X1dcw8w83vZt6Kxpump": {
    "kol": "Dior",
@@ -1149,23 +1140,11 @@
    "entry_mcap": 418368.0,
    "entry_ts": 1795710357.329067,
    "peak_mcap": 468906.0,
-   "last_mcap": 45345.0,
-   "last_ts": 1795747463.24893
+   "last_mcap": 34340.0,
+   "last_ts": 1795795849.638134
   }
  },
  "scores": {
-  "Mitch": {
-   "calls": 9,
-   "early_alpha_2x": 33.3,
-   "early_alpha_3x": 33.3,
-   "early_alpha_5x": 22.2,
-   "early_alpha_10x": 22.2,
-   "median_multiple": 1.0,
-   "median_entry_mcap": 211554,
-   "still_up_rate": 11.1,
-   "dead_rate": 77.8,
-   "measured": true
-  },
   "Cooker": {
    "calls": 22,
    "early_alpha_2x": 13.6,
@@ -1175,7 +1154,7 @@
    "median_multiple": 1.01,
    "median_entry_mcap": 701192,
    "still_up_rate": 4.5,
-   "dead_rate": 72.7,
+   "dead_rate": 63.6,
    "measured": true
   },
   "Dior": {
@@ -1187,7 +1166,7 @@
    "median_multiple": 1.04,
    "median_entry_mcap": 345490,
    "still_up_rate": 0.0,
-   "dead_rate": 83.3,
+   "dead_rate": 94.4,
    "measured": true
   },
   "Solcrow": {
@@ -1236,6 +1215,18 @@
    "median_entry_mcap": 175536,
    "still_up_rate": 12.5,
    "dead_rate": 75.0,
+   "measured": true
+  },
+  "Mitch": {
+   "calls": 8,
+   "early_alpha_2x": 25.0,
+   "early_alpha_3x": 25.0,
+   "early_alpha_5x": 25.0,
+   "early_alpha_10x": 25.0,
+   "median_multiple": 1.0,
+   "median_entry_mcap": 180112,
+   "still_up_rate": 12.5,
+   "dead_rate": 87.5,
    "measured": true
   },
   "Kreo": {
@@ -1307,7 +1298,7 @@
    "median_multiple": 1.73,
    "median_entry_mcap": 1026516,
    "still_up_rate": 0.0,
-   "dead_rate": 100.0,
+   "dead_rate": 75.0,
    "measured": false
   },
   "Ethan": {
@@ -1378,7 +1369,7 @@
    "early_alpha_10x": 0.0,
    "median_multiple": 1.13,
    "median_entry_mcap": 24319254,
-   "still_up_rate": 25.0,
+   "still_up_rate": 0.0,
    "dead_rate": 0.0,
    "measured": false
   },
@@ -1491,7 +1482,7 @@
    "measured": false
   }
  },
- "updated_at": "2026-11-27T02:44:23.249156+00:00",
+ "updated_at": "2026-11-27T16:10:49.638394+00:00",
  "ranking": [
   {
    "kol": "Cented",
@@ -1574,6 +1565,14 @@
    "calls": 0
   },
   {
+   "kol": "Mitch",
+   "tier": "S",
+   "seed_tier": "S",
+   "value": 62.4,
+   "basis": "8 entries, prior still dominant",
+   "calls": 8
+  },
+  {
    "kol": "Trey",
    "tier": "S",
    "seed_tier": "A",
@@ -1583,7 +1582,7 @@
   },
   {
    "kol": "Leens",
-   "tier": "S",
+   "tier": "A",
    "seed_tier": "A",
    "value": 62.0,
    "basis": "reputation prior",
@@ -1748,14 +1747,6 @@
    "value": 62.0,
    "basis": "reputation prior",
    "calls": 0
-  },
-  {
-   "kol": "Mitch",
-   "tier": "A",
-   "seed_tier": "S",
-   "value": 61.7,
-   "basis": "9 entries, prior still dominant",
-   "calls": 9
   },
   {
    "kol": "Loopier",
